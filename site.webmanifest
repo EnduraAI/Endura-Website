@@ -1,0 +1,8 @@
+{
+  "name": "Endura Decommissioning",
+  "short_name": "Endura",
+  "icons": [{ "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" }],
+  "theme_color": "#10171D",
+  "background_color": "#10171D",
+  "display": "standalone"
+}

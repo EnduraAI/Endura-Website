@@ -1,0 +1,29 @@
+<svg viewBox="0 0 620 150" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="funnel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A33A2A" stop-opacity="0.30"/>
+      <stop offset="50%" stop-color="#C8741A" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#2C7A6B" stop-opacity="0.40"/>
+    </linearGradient>
+  </defs>
+  <!-- baseline -->
+  <line x1="40" y1="75" x2="580" y2="75" stroke="#2E4D63" stroke-width="1.5"/>
+  <!-- funnel polygon: wide left -> narrow right -->
+  <polygon points="60,18 60,132 560,60 560,90" fill="url(#funnel)"/>
+  <!-- centre estimate line -->
+  <line x1="60" y1="75" x2="560" y2="75" stroke="#11181F" stroke-width="2" stroke-dasharray="2 3"/>
+  <!-- left ticks -->
+  <line x1="60" y1="18" x2="60" y2="132" stroke="#A33A2A" stroke-width="2"/>
+  <circle cx="60" cy="75" r="4" fill="#11181F"/>
+  <!-- right ticks -->
+  <line x1="560" y1="60" x2="560" y2="90" stroke="#2C7A6B" stroke-width="2.5"/>
+  <circle cx="560" cy="75" r="4" fill="#2C7A6B"/>
+  <!-- labels -->
+  <text x="60" y="148" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#7C8B97" text-anchor="start">DAY 0 &#183; INHERITED DOCS</text>
+  <text x="560" y="148" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C7A6B" text-anchor="end">POST-REMEDIATION</text>
+  <text x="48" y="14" font-family="IBM Plex Mono, monospace" font-size="9" fill="#A33A2A" text-anchor="end">+100%</text>
+  <text x="48" y="138" font-family="IBM Plex Mono, monospace" font-size="9" fill="#A33A2A" text-anchor="end">&#8722;50%</text>
+  <text x="572" y="58" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2C7A6B" text-anchor="start">+12%</text>
+  <text x="572" y="98" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2C7A6B" text-anchor="start">&#8722;9%</text>
+  <text x="310" y="68" font-family="IBM Plex Mono, monospace" font-size="9" fill="#11181F" text-anchor="middle">ARO ESTIMATE</text>
+</svg>
