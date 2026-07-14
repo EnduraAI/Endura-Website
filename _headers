@@ -1,0 +1,14 @@
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-6th3KyeiTDPc7l0JRPcDB5bpLuIqJAn6vfWBJZaBXx0=' 'sha256-ZnyusVu2G7uUuVBZI/Eh0EbBbWjBoQ26XU2QLpUiDSA=' 'sha256-HTwSCGpgvLDdwTn8r+umCyuvz31oeSn/e+mMgPKzNBc=' 'sha256-aw3bVcS82qITMhNmJFPxyi22AyKHCsqCPaZWNFWXhLg=' 'sha256-ekGPaA/mVWA3hcnYzDZ8uxH15Ij4PoeXrAOo9MI7i9w=' 'sha256-/E4xfup8pwQ53QkzeAWPd6c55ONI56wZCTUJpl0GyoA=' 'sha256-TRubeuz6to49t/mnikroN2zye4iyu5U7C2mxZDfvw18=' 'sha256-BGAEPMN0SkiUMqEtJtpTJkYn5LoyA2jRtmPsoi4hj6A=' 'sha256-c1hA1B4Cb17GmYlh3sHJ1SvCb/f9/zLNba8CHHDUIO8=' 'sha256-iZ5s1CtWRqupAheD2msDzLsrpXwMyS0OoVLLzDxzzd8='; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

@@ -1,0 +1,85 @@
+{
+  "package": "Endura Decommissioning Website V34 Final - GitHub Pages Edition",
+  "generated_utc": "2026-07-14T05:52:30+00:00",
+  "release_status": "READY FOR GITHUB PAGES DEPLOYMENT SUBJECT TO LIVE CHECKS",
+  "known_packaged_errors": 0,
+  "changes": {
+    "contact_form": {
+      "provider": "Formspree",
+      "endpoint": "https://formspree.io/f/mnjkwryq",
+      "form_id": "contactForm",
+      "honeypot": "_gotcha",
+      "success_url": "https://enduradecom.com/thanks.html",
+      "netlify_attributes_removed": true,
+      "javascript_selector": "document.getElementById(\"contactForm\")"
+    },
+    "restored_pages": [
+      "diagnostic.html",
+      "explorer.html",
+      "checklist.html"
+    ],
+    "github_pages": [
+      "CNAME",
+      ".nojekyll",
+      "repository-root index.html"
+    ],
+    "privacy_notice_updated_for": [
+      "Formspree enquiry form",
+      "Formspree resource-request form"
+    ]
+  },
+  "verification": {
+    "static_automated": {
+      "total": 502,
+      "passed": 502,
+      "failed": 0
+    },
+    "browser_interactions": {
+      "status": "PASS",
+      "tested": [
+        "diagnostic workflow",
+        "asset explorer domain and asset switches",
+        "checklist unlock/count",
+        "contact form structure"
+      ],
+      "console_errors": 0
+    },
+    "responsive": {
+      "tests": 40,
+      "failed": 0,
+      "viewports": [
+        "360x800",
+        "390x844",
+        "430x932",
+        "768x1024",
+        "1024x768",
+        "1366x768",
+        "1440x900",
+        "1920x1080"
+      ],
+      "pages": [
+        "index.html",
+        "contact.html",
+        "diagnostic.html",
+        "explorer.html",
+        "checklist.html"
+      ]
+    },
+    "capability_pdf": {
+      "source_sha256": "57f6f3c9ef992cf57d28ee6f4e313016a54133e368e6192ce0e506984876c76c",
+      "packaged_sha256": "57f6f3c9ef992cf57d28ee6f4e313016a54133e368e6192ce0e506984876c76c",
+      "byte_identical": true,
+      "verified_legal_identity": "Van Iersel Projects Pty Ltd t/a Endura Decommissioning, ACN 652 513 605",
+      "page": 13
+    }
+  },
+  "live_checks_required": [
+    "Activate and verify the Formspree endpoint.",
+    "Set the Formspree dashboard success redirect to https://enduradecom.com/thanks.html.",
+    "Submit one real contact-form test and one checklist resource-request test from the live domain.",
+    "Configure enduradecom.com under GitHub repository Settings > Pages and enforce HTTPS after DNS verification.",
+    "Test physical iPhone Safari and Android Chrome.",
+    "Confirm live social previews and any delivery-layer security headers."
+  ],
+  "note": "No static package can prove third-party delivery, DNS, HTTPS, email notification or physical-device behaviour before deployment."
+}

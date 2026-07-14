@@ -1,0 +1,282 @@
+[
+  {
+    "page": "decomm-ai",
+    "width": 360,
+    "height": 800,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 360,
+    "height": 800,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 360,
+    "height": 800,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 360,
+    "height": 800,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 360,
+    "height": 800,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 430,
+    "height": 932,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 430,
+    "height": 932,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 430,
+    "height": 932,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 430,
+    "height": 932,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 430,
+    "height": 932,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 1024,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 1366,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 1366,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 1366,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 1366,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 1366,
+    "height": 768,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "decomm-ai",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "contact",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "diagnostic",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "explorer",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "page": "checklist",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": []
+  }
+]

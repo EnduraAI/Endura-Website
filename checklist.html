@@ -1,195 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARO Defensibility Checklist, Endura Decommissioning</title>
-<meta name="description" content="A free 12-point checklist senior teams use to pressure-test whether a late-life asset's decommissioning cost basis would survive a board, auditor or regulator.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#F6F7F8">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ARO Defensibility Checklist, Endura">
-<meta property="og:description" content="12 points to pressure-test whether your late-life cost basis would survive a board, auditor or regulator.">
-<meta property="og:url" content="https://enduradecom.com/checklist.html">
-<meta property="og:image" content="https://enduradecom.com/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<script>(function(){try{if(localStorage.getItem("endura-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="enhance.css">
-<style>
-  .ck-hero{background:var(--deep);color:var(--ink);position:relative;overflow:hidden;padding:clamp(44px,7vw,80px) 0}
-  .ck-hero .grid-tex{position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(110% 90% at 30% 20%,#000 30%,transparent 78%)}
-  .ck-hero .in{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-  @media(max-width:860px){.ck-hero .in{grid-template-columns:1fr;gap:28px}}
-  .ck-hero h1{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(28px,4.5vw,46px);line-height:1.06;letter-spacing:-.02em;color:#fff;margin:14px 0 16px;max-width:16ch}
-  .ck-hero h1 b{font-weight:500;font-style:italic;color:var(--amber-soft)}
-  .ck-hero p{color:#C9D2D8;font-size:16px;max-width:52ch;margin-bottom:10px}
-  .ck-preview{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:24px;position:relative}
-  .ck-preview .pv-t{font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-soft);margin-bottom:14px}
-  .ck-preview ul{list-style:none}
-  .ck-preview li{font-size:13.5px;color:#D7DEE3;padding:8px 0 8px 26px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)}
-  .ck-preview li::before{content:"";position:absolute;left:0;top:11px;width:13px;height:13px;border:1.5px solid var(--amber);border-radius:3px}
-  .ck-preview li.locked{color:var(--mist);filter:blur(3px);user-select:none}
-  .ck-preview .lock-note{margin-top:14px;font-family:'Fragment Mono',monospace;font-size:10px;color:var(--mist);text-align:center}
-
-  .gate{max-width:560px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,48px)}
-  .gate .form{text-align:left}
-  .gate h2{font-family:'Newsreader',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);margin-bottom:8px;text-align:center}
-  .gate .sub{text-align:center;color:var(--ink-2);font-size:14px;margin-bottom:24px}
-
-  .full{display:none;max-width:820px;margin:0 auto;padding:clamp(30px,5vw,56px) clamp(20px,5vw,48px)}
-  .full.on{display:block;animation:dgfade .5s ease}
-  @keyframes dgfade{from{opacity:0;transform:translateY(10px)}to{opacity:1}}
-  .ck-list{counter-reset:ck}
-  .ck-item{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
-  .ck-item .n{counter-increment:ck;font-family:'Fragment Mono',monospace;font-size:13px;color:#fff;background:var(--steel);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center}
-  .ck-item .n::before{content:counter(ck,decimal-leading-zero)}
-  .ck-item h3{font-family:'Newsreader',Georgia,serif;font-size:18px;font-weight:500;color:var(--ink);margin-bottom:5px}
-  .ck-item p{font-size:14px;color:var(--ink-2);line-height:1.55}
-  .ck-cat{font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:26px 0 6px}
-  @media print{.nav,.foot,.print-hide{display:none!important}}
-</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>ARO Defensibility Checklist | Endura Decommissioning</title>
+<meta content="A 12-point checklist for testing whether a late-life asset cost basis is traceable, evidence-backed and ready for board, audit or regulatory review." name="description"/>
+<link href="https://enduradecom.com/checklist.html" rel="canonical"/>
+<meta content="#f7f5f0" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#12171b" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Endura Decommissioning" property="og:site_name"/>
+<meta content="ARO Defensibility Checklist | Endura Decommissioning" property="og:title"/>
+<meta content="A 12-point checklist for testing whether a late-life asset cost basis is traceable, evidence-backed and ready for board, audit or regulatory review." property="og:description"/>
+<meta content="https://enduradecom.com/checklist.html" property="og:url"/>
+<meta content="https://enduradecom.com/assets/img/og-cover.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Endura Decommissioning - Decisions that stand up" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ARO Defensibility Checklist | Endura Decommissioning" name="twitter:title"/>
+<meta content="A 12-point checklist for testing whether a late-life asset cost basis is traceable, evidence-backed and ready for board, audit or regulatory review." name="twitter:description"/>
+<meta content="https://enduradecom.com/assets/img/og-cover.png" name="twitter:image"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="site.webmanifest" rel="manifest"/>
+<script src="assets/js/theme-boot.js"></script>
+<link href="assets/css/site.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"ARO Defensibility Checklist",
+  "url":"https://enduradecom.com/checklist.html",
+  "about":"Checklist for pressure-testing the evidence behind a late-life asset cost basis",
+  "isPartOf":{"@type":"WebSite","name":"Endura Decommissioning","url":"https://enduradecom.com/"}
+}</script>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav-in">
-    <a class="nav-brand" href="index.html">
-      <div class="ring"><img class="ring-light" src="logo_ring_light.svg" alt="Endura" width="34" height="34"><img class="ring-dark" src="logo_ring_dark.svg" alt="" width="34" height="34"></div>
-      <div><div class="nm">Endura Decommissioning</div><div class="sb">Decommissioning &middot; Asset Intelligence</div></div>
-    </a>
-    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="decomm-ai.html">decomm.ai</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <button class="theme-toggle" aria-label="Switch colour theme" title="Light / dark">
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <a href="contact.html" class="nav-cta">Request a pilot</a>
-    </div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="site-nav">
+<div class="wrap nav-row">
+<a aria-label="Endura Decommissioning home" class="brand" href="index.html"><span class="brand-logo"><img alt="" class="logo-for-light" src="assets/img/endura-logo-light.svg"/><img alt="" class="logo-for-dark" src="assets/img/endura-logo-dark.svg"/></span><span class="brand-copy"><span class="brand-name">Endura Decommissioning</span><span class="brand-desc">Independent decommissioning advisory</span></span></a>
+<nav aria-label="Primary navigation" class="nav-links">
+<a class="" href="index.html">Home</a><a class="" href="services.html">Services</a><a class="" href="about.html">About</a><a class="active" href="decomm-ai.html">decomm.ai</a><a class="" href="contact.html">Contact</a>
 </nav>
-
-<section class="ck-hero">
-  <div class="grid-tex"></div>
-  <div class="wrap in">
-    <div>
-      <div class="eyebrow" style="color:var(--amber-soft)">Free resource · senior teams</div>
-      <h1>Would your cost basis <b>survive the room?</b></h1>
-      <p>Twelve questions a board, an auditor and a regulator will eventually ask about a late-life asset's decommissioning provision, and what a defensible answer looks like for each.</p>
-      <p style="color:var(--mist);font-size:14px">Used by asset-retirement and JV-governance teams to pressure-test a number before it's committed. One page. No fluff.</p>
-    </div>
-    <div class="ck-preview">
-      <div class="pv-t">Inside the checklist · preview</div>
-      <ul>
-        <li>Can you trace the basis of estimate to source?</li>
-        <li>Are structural as-builts verified against current condition?</li>
-        <li class="locked">Is the hazardous-material inventory current and classified?</li>
-        <li class="locked">Does the isolation philosophy support the make-safe scope?</li>
-        <li class="locked">Is the waste pathway costed against real disposal capacity?</li>
-      </ul>
-      <div class="lock-note">+ 7 more, unlock the full checklist below ↓</div>
-    </div>
-  </div>
-</section>
-
-<!-- GATE -->
-<div class="gate" id="ckGate">
-  <h2>Get the full checklist</h2>
-  <p class="sub">Enter your email and it unlocks instantly on this page, and you can print or save it.</p>
-  <!-- Formspree: replace YOUR_FORM_ID (same form is fine, or a dedicated one) -->
-  <form class="form" id="ckForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <div class="field"><label for="ckName">Name</label><input type="text" id="ckName" name="name" required></div>
-    <div class="field"><label for="ckEmail">Work email</label><input type="email" id="ckEmail" name="email" required></div>
-    <div class="field"><label for="ckCo">Company</label><input type="text" id="ckCo" name="company"></div>
-    <input type="hidden" name="_subject" value="ARO Checklist download">
-    <input type="hidden" name="resource" value="ARO Defensibility Checklist">
-    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Unlock the checklist →</button>
-    <p class="mono" style="font-size:10px;color:var(--mist);margin-top:12px;text-align:center;line-height:1.5">We'll only use this to send the checklist and occasional late-life insights. No spam; unsubscribe anytime.</p>
-  </form>
+<div class="nav-actions">
+<button aria-label="Switch theme" aria-pressed="false" class="theme-btn" type="button">
+<svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"></path></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="4"></circle>
+<path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M18.5 17.5 20 19M5 19l1.5-1.5M18.5 6.5 20 5"></path>
+</svg></button><a class="btn" href="contact.html">Discuss a scope</a><button aria-expanded="false" aria-label="Open navigation" class="menu-btn" type="button">
+<span></span><span></span><span></span>
+</button>
 </div>
-
-<!-- FULL CHECKLIST (revealed) -->
-<div class="full" id="ckFull">
-  <div class="sec-head"><span class="num">✓</span><h2 style="font-family:'Newsreader',Georgia,serif;font-size:28px;font-weight:500">The ARO Defensibility Checklist</h2></div>
-  <p class="prose" style="margin-bottom:10px">Twelve checks across four areas. For each, a defensible answer is evidence-based and traceable, not "we think so." If you can't answer three or more with confidence, the cost basis is carrying more uncertainty than the number suggests.</p>
-
-  <div class="ck-cat">A · Documentation lineage</div>
-  <div class="ck-list">
-    <div class="ck-item"><div class="n"></div><div><h3>Traceable basis of estimate</h3><p>Can you follow the current cost number back to a documented basis, assumptions, quantities, rates, rather than an inherited spreadsheet?</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Authorship continuity</h3><p>Is anyone on the current team able to defend how the estimate was built, or did that knowledge leave with previous operators or staff?</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Transfer integrity</h3><p>Through each change of ownership, was documentation migrated and reconciled, or just handed over as-is?</p></div></div>
-
-    <div class="ck-cat">B · Engineering evidence</div>
-    <div class="ck-item"><div class="n"></div><div><h3>Verified structural as-builts</h3><p>Are primary-steel records confirmed against current condition? Severance points, lift weights and rigging all depend on this.</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Current hazmat & NORM inventory</h3><p>Is there a classified inventory? It drives disposal routing, PPE regime and waste-slot booking, and it's often the biggest surprise.</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Isolation philosophy</h3><p>Do line-status records support a credible make-safe scope, or will the offshore/site campaign discover it the hard way?</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Recent inspection data</h3><p>Is integrity data recent enough to rely on, or are you provisioning against a condition you last saw years ago?</p></div></div>
-
-    <div class="ck-cat">C · Regulatory & waste</div>
-    <div class="ck-item"><div class="n"></div><div><h3>Regulator-ready evidence</h3><p>Could you assemble the evidentiary trail a regulator expects for your end-state, derogation, close-out or full removal, today?</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Costed waste pathway</h3><p>Is the waste strategy tested against real disposal and recycling capacity, with chain-of-custody, not an assumed route?</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>End-state justification</h3><p>Is the chosen end-state supported by evidence of net benefit, or is it an assumption nobody has re-tested against current standards?</p></div></div>
-
-    <div class="ck-cat">D · Commercial defensibility</div>
-    <div class="ck-item"><div class="n"></div><div><h3>Stated accuracy class</h3><p>Does the estimate carry an explicit AACE class and range, so the board knows the confidence behind the number, not just the number?</p></div></div>
-    <div class="ck-item"><div class="n"></div><div><h3>Independent challenge</h3><p>Has anyone outside the team that built it stress-tested the basis, especially on non-operated positions you fund but don't control?</p></div></div>
-  </div>
-
-  <div class="res-cta" style="background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:24px;margin-top:28px;text-align:center">
-    <h3 style="font-family:'Newsreader',Georgia,serif;font-size:20px;color:var(--ink);margin-bottom:8px">Counted three or more you couldn't answer with evidence?</h3>
-    <p style="font-size:14px;color:var(--ink-2);max-width:52ch;margin:0 auto 18px">That's exactly what a decomm.ai Rapid Liability Diagnostic resolves, scoring each of these across nine weighted domains and returning a costed, board-ready readout.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="contact.html" class="btn btn-primary">Request a pilot</a>
-      <button class="btn btn-dark print-hide" onclick="window.print()">Print / save the checklist</button>
-    </div>
-  </div>
 </div>
-
-<section class="foot-close">
-  <div class="grid-tex"></div>
-  <div class="in">
-    <div class="ring"><img src="logo_ring_dark.svg" alt="" width="40" height="40"></div>
-    <h3>Smarter. Safer. <b>More sustainable.</b></h3>
-    <p>Endura Decommissioning</p>
-  </div>
-</section>
-<footer class="foot">
-  <div class="foot-in">
-    <div class="fb">
-      <div class="nm">Endura Decommissioning</div>
-      <p>Australian specialist in offshore decommissioning and late-life asset management, pairing senior engineering with the decomm.ai platform, across Asia&ndash;Pacific.</p>
-      <p style="margin-top:10px;font-family:'Fragment Mono',monospace;font-size:11px;color:var(--mist)">Van Iersel Projects Pty Ltd t/a Endura Decommissioning &middot; ACN 652 513 605</p>
-    </div>
-    <div class="fcol"><h5>Explore</h5><a href="index.html">Home</a><a href="decomm-ai.html">decomm.ai</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-    <div class="fcol"><h5>Contact</h5><a href="mailto:jed@enduradecom.com">jed@enduradecom.com</a><a href="tel:+61415963003">+61 415 963 003</a><a href="https://www.linkedin.com/company/endura-decommissioning/" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html" style="color:var(--amber-soft)">Request a pilot</a></div>
-  </div>
-  <div class="foot-status"><span><span class="dot-live"></span>systems nominal</span><span id="ftClock"></span><span>ISO 27001-aligned environment</span><span style="margin-left:auto"><a href="https://www.decomm.ai/" target="_blank" rel="noopener" style="color:inherit">decomm.ai &#8599; sandbox available</a></span></div>
-  <div class="foot-base"><span>&copy; 2026 Van Iersel Projects Pty Ltd</span><span>Doonan, Queensland, Australia</span></div>
+</header>
+<main id="main">
+<section class="page-hero tool-hero"><div class="wrap reveal"><div class="eyebrow">Free resource · 12 evidence checks</div><h1>Would your cost basis survive the room?</h1><p>Twelve questions a board, auditor or regulator will eventually ask, and the evidence position a defensible answer requires.</p></div></section>
+<section class="section"><div class="wrap checklist-intro-grid"><div class="tool-intro reveal"><div class="overline">Free resource · senior teams</div><h2>Pressure-test the basis before the room does.</h2><p>Twelve checks a board, auditor, partner or regulator is likely to ask. A defensible answer is evidence-based and traceable, not simply expected to be true.</p><ul class="preview-list"><li>Trace the basis of estimate to source</li><li>Verify structural as-builts against current condition</li><li>Confirm the hazardous-material and NORM inventory</li><li>Test the isolation philosophy and make-safe basis</li><li>Cost the waste pathway against current capacity</li></ul></div>
+<article class="form-card reveal" id="checklistGate"><div class="overline">Unlock the checklist</div><h2>Get the full 12-point review.</h2><p>Enter your details to open the checklist immediately on this page.</p><form accept-charset="UTF-8" action="https://formspree.io/f/mnjkwryq" data-success-url="https://enduradecom.com/checklist.html?unlocked=1#full-checklist" id="checklistUnlockForm" method="POST"><input name="_next" type="hidden" value="https://enduradecom.com/checklist.html?unlocked=1#full-checklist"/><input name="_subject" type="hidden" value="Endura ARO Defensibility Checklist download"/><input name="source" type="hidden" value="ARO Defensibility Checklist"/><div aria-hidden="true" class="form-honeypot"><label>Leave this field empty<input autocomplete="off" name="_gotcha" tabindex="-1" type="text"/></label></div><div class="form-grid"><div class="field"><label for="checkName">Name</label><input autocomplete="name" id="checkName" name="name" required="" type="text"/></div><div class="field"><label for="checkEmail">Work email</label><input autocomplete="email" id="checkEmail" name="email" required="" type="email"/></div><div class="field full"><label for="checkCompany">Company</label><input autocomplete="organization" id="checkCompany" name="company" type="text"/></div></div><label class="consent-line"><input name="consent" required="" type="checkbox" value="Requested ARO Defensibility Checklist"/><span>Send this resource request to Endura so the checklist can be opened.</span></label><button class="btn" type="submit">Unlock the checklist</button><p aria-live="polite" class="form-status" id="checklistFormStatus"></p></form></article></div></section>
+<section aria-hidden="true" class="section tone-alt checklist-full" hidden="" id="full-checklist"><div class="wrap"><div class="section-head"><div><div class="overline">ARO Defensibility Checklist</div><h2>Would the current cost basis survive the room?</h2></div><div class="check-score"><strong id="checkCount">0</strong><span>/ 12 evidenced</span></div></div><p class="check-instruction">Mark each item only where the answer can be supported by current source evidence. The selections remain in this browser session and are not transmitted.</p><section class="check-group"><div class="overline">A · Documentation lineage</div><div class="check-grid"><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">01</span><span><strong>Traceable basis of estimate</strong><small>Can the current cost number be followed to documented quantities, assumptions and rates rather than an inherited spreadsheet?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">02</span><span><strong>Authorship continuity</strong><small>Can someone on the current team explain and defend how the estimate was built?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">03</span><span><strong>Transfer integrity</strong><small>Was documentation reconciled through each ownership transition rather than transferred as-is?</small></span></label></div></section><section class="check-group"><div class="overline">B · Engineering evidence</div><div class="check-grid"><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">04</span><span><strong>Verified structural as-builts</strong><small>Are primary-steel records and modification history confirmed against current condition?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">05</span><span><strong>Current hazardous-material and NORM inventory</strong><small>Is the inventory classified, traceable and suitable for disposal planning?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">06</span><span><strong>Isolation philosophy</strong><small>Do line-status and containment records support a credible make-safe scope?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">07</span><span><strong>Recent inspection data</strong><small>Is integrity evidence current enough to support access, lifting, removal and temporary-state assumptions?</small></span></label></div></section><section class="check-group"><div class="overline">C · Regulatory and waste</div><div class="check-grid"><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">08</span><span><strong>Regulator-ready evidence</strong><small>Could the evidentiary trail for the proposed end state, derogation or close-out be assembled now?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">09</span><span><strong>Costed waste pathway</strong><small>Is the waste strategy tested against real disposal and recycling routes, capacity and chain-of-custody requirements?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">10</span><span><strong>End-state justification</strong><small>Is the selected end state supported by current evidence of net benefit and applicable regulatory expectations?</small></span></label></div></section><section class="check-group"><div class="overline">D · Commercial defensibility</div><div class="check-grid"><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">11</span><span><strong>Stated accuracy class</strong><small>Does the estimate carry an explicit AACE class and range so decision-makers understand the confidence behind the number?</small></span></label><label class="check-item"><input data-check-item="" type="checkbox"/><span class="check-number">12</span><span><strong>Independent challenge</strong><small>Has a technically independent reviewer stress-tested the basis, assumptions, interfaces and material omissions?</small></span></label></div></section><div class="check-summary"><div><div class="overline">Review signal</div><h3 id="checkSummaryTitle">Start the evidence review.</h3><p id="checkSummaryCopy">Mark the items that can be defended from current records.</p></div><div class="hero-actions"><button class="btn-outline" id="printChecklist" type="button">Print or save PDF</button><a class="btn" href="contact.html">Discuss the gaps</a></div></div></div></section>
+<section class="contact-band"><div class="wrap contact-band-inner"><div><h2>Three or more uncertain answers usually deserve a structured diagnostic.</h2><p>Endura can score the underlying evidence, isolate the material uncertainty drivers and define the next action.</p></div><div class="contact-actions"><a class="btn" href="diagnostic.html">Try the self-check</a><a class="btn-outline" href="decomm-ai.html">Back to decomm.ai</a></div></div></section>
+</main>
+<footer class="footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<span class="footer-logo"><img alt="" class="logo-for-light" src="assets/img/endura-logo-light.svg"/><img alt="" class="logo-for-dark" src="assets/img/endura-logo-dark.svg"/></span>
+<h3>Endura Decommissioning</h3>
+<p>
+              Independent decommissioning advisory and engineering support for
+              studies, ARO basis, business cases, scope definition and execution
+              strategy.
+            </p>
+<div class="footer-socials">
+<a class="social-btn" href="https://www.linkedin.com/company/endura-decommissioning/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="external-icon" viewbox="0 0 24 24">
+<path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.85 3A1.92 1.92 0 1 0 4.86 6.84 1.92 1.92 0 0 0 4.85 3ZM19 12.87c0-3.22-1.72-4.72-4.02-4.72-1.85 0-2.68 1.02-3.15 1.74V8.3H8.5V19h3.33v-5.3c0-1.4.27-2.76 2-2.76 1.7 0 1.72 1.6 1.72 2.85V19H19v-6.13Z" fill="currentColor"></path>
+</svg>
+                Endura on LinkedIn</a><a class="social-btn" href="https://www.linkedin.com/in/jed-van-iersel" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="external-icon" viewbox="0 0 24 24">
+<path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.85 3A1.92 1.92 0 1 0 4.86 6.84 1.92 1.92 0 0 0 4.85 3ZM19 12.87c0-3.22-1.72-4.72-4.02-4.72-1.85 0-2.68 1.02-3.15 1.74V8.3H8.5V19h3.33v-5.3c0-1.4.27-2.76 2-2.76 1.7 0 1.72 1.6 1.72 2.85V19H19v-6.13Z" fill="currentColor"></path>
+</svg>
+                Jed van Iersel</a>
+</div>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html">About Endura</a></li>
+<li><a href="decomm-ai.html">decomm.ai</a></li>
+<li>
+<a href="assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf">Capability statement</a>
+</li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="diagnostic.html">Liability self-check</a></li><li><a href="explorer.html">Asset explorer</a></li><li><a href="checklist.html">ARO checklist</a></li></ul>
+</div>
+<div>
+<h4>Contact and legal</h4>
+<ul>
+<li>
+<a href="mailto:jed@enduradecom.com">jed@enduradecom.com</a>
+</li>
+<li><a href="tel:+61415963003">+61 415 963 003</a></li>
+<li>Doonan, Queensland, Australia</li>
+<li><a href="privacy.html">Privacy</a></li>
+</ul>
+<p>
+              Van Iersel Projects Pty Ltd t/a Endura Decommissioning<br/>ACN
+              652 513 605
+            </p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Van Iersel Projects Pty Ltd. All rights reserved.</span><span>Endura Decommissioning is the consultancy offering. decomm.ai is
+            presented separately as an asset-intelligence platform
+            offering.</span>
+</div>
+</div>
 </footer>
-
-<script>
-/* Reveal the full checklist after submit. Submits to Formspree in the background
-   (when configured) but unlocks immediately so the visitor is never blocked. */
-document.getElementById('ckForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var form = e.target;
-  var action = form.getAttribute('action');
-  // fire to Formspree only if configured
-  if (action.indexOf('YOUR_FORM_ID') === -1) {
-    try { fetch(action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } }); } catch (err) {}
-  }
-  document.getElementById('ckGate').style.display = 'none';
-  document.getElementById('ckFull').classList.add('on');
-  document.getElementById('ckFull').scrollIntoView({ behavior: 'smooth' });
-});
-</script>
-<script src="site.js"></script>
-<script src="enhance.js"></script>
-</body>
-</html>
+<script defer="" src="assets/js/site.js"></script>
+<script defer="" src="assets/js/checklist.js"></script>
+</body></html>

@@ -1,0 +1,2525 @@
+{
+  "package": "Endura Decommissioning V34 Final - GitHub Pages Edition",
+  "summary": {
+    "total": 502,
+    "passed": 502,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "test": "required file: index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: services.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: about.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: decomm-ai.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: contact.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: privacy.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: thanks.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: 404.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: diagnostic.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: explorer.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: checklist.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: assets/css/site.css",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: assets/js/site.js",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: assets/js/diagnostic.js",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: assets/js/explorer.js",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: assets/js/checklist.js",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: CNAME",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: .nojekyll",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: sitemap.xml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: robots.txt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "required file: site.webmanifest",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "404.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "404.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "404.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "404.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "404.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "404.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "404.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "404.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "404.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "404.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "404.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "404.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "404.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "404.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "404.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "404.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "404.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "404.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "404.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "404.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "404.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "404.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "404.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "404.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "404.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "404.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "404.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "404.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "about.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "about.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "about.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "about.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "about.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "about.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "about.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "about.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "about.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "about.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "about.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "about.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "about.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "about.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "about.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "about.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "about.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "about.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "about.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "about.html: local ref assets/img/jed-van-iersel-portrait.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/jed-van-iersel-portrait.png"
+    },
+    {
+      "test": "about.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "about.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "about.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "about.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "about.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "about.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "about.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "about.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "checklist.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "checklist.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "checklist.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "checklist.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "checklist.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "checklist.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "checklist.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "checklist.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "checklist.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "checklist.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "checklist.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "checklist.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "checklist.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "checklist.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "checklist.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "checklist.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "checklist.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "checklist.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "checklist.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "checklist.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "checklist.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "checklist.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "checklist.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "checklist.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "checklist.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "checklist.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "checklist.html: local ref assets/js/checklist.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/checklist.js"
+    },
+    {
+      "test": "checklist.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "checklist.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "checklist.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "checklist.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "contact.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "contact.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "contact.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "contact.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "contact.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "contact.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "contact.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "contact.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "contact.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "contact.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "contact.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "contact.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "contact.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "contact.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "contact.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "contact.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "contact.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "contact.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "contact.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "contact.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "contact.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "contact.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "contact.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "contact.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "contact.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "contact.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "contact.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "contact.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "decomm-ai.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "decomm-ai.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "decomm-ai.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "decomm-ai.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "decomm-ai.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "diagnostic.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "diagnostic.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "diagnostic.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "diagnostic.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "diagnostic.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "diagnostic.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "diagnostic.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "diagnostic.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "diagnostic.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "diagnostic.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "diagnostic.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "diagnostic.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "diagnostic.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "diagnostic.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "diagnostic.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "diagnostic.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "diagnostic.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "diagnostic.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "diagnostic.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/js/diagnostic.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/diagnostic.js"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "diagnostic.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "diagnostic.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "explorer.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "explorer.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "explorer.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "explorer.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "explorer.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "explorer.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "explorer.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "explorer.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "explorer.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "explorer.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "explorer.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "explorer.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "explorer.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "explorer.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "explorer.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "explorer.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "explorer.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "explorer.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "explorer.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "explorer.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "explorer.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "explorer.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "explorer.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "explorer.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "explorer.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "explorer.html: local ref assets/js/explorer.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/explorer.js"
+    },
+    {
+      "test": "explorer.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "explorer.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "explorer.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "explorer.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "index.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "index.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "index.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "index.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "index.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "index.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "index.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "index.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "index.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "index.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "index.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "index.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "index.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "index.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "index.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "index.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "index.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "index.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "index.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "index.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "index.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "index.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "index.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "index.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "index.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "index.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "index.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "index.html: local ref assets/img/jed-van-iersel-portrait.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/jed-van-iersel-portrait.png"
+    },
+    {
+      "test": "index.html: local ref assets/img/capability-cover.jpg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/capability-cover.jpg"
+    },
+    {
+      "test": "index.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "index.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "index.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "index.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "index.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "index.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "index.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "index.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "privacy.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "privacy.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "privacy.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "privacy.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "privacy.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "privacy.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "privacy.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "privacy.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "privacy.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "privacy.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "privacy.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "privacy.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "privacy.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "privacy.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "privacy.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "privacy.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "privacy.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "privacy.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "privacy.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "privacy.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "privacy.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "privacy.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "privacy.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "privacy.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "privacy.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "privacy.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "privacy.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "services.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "services.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "services.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "services.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "services.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "services.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "services.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "services.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "services.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "services.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "services.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "services.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "services.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "services.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "services.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "services.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "services.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "services.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "services.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "services.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "services.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "services.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "services.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "services.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "services.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "services.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "services.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "services.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "thanks.html: lang en-AU",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: one H1",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "test": "thanks.html: title",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: main landmark",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: theme boot before stylesheet",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: no duplicate IDs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "thanks.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "thanks.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "thanks.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "thanks.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "thanks.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "thanks.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "thanks.html: local ref index.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/index.html"
+    },
+    {
+      "test": "thanks.html: local ref services.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/services.html"
+    },
+    {
+      "test": "thanks.html: local ref about.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/about.html"
+    },
+    {
+      "test": "thanks.html: local ref decomm-ai.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/decomm-ai.html"
+    },
+    {
+      "test": "thanks.html: local ref assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf"
+    },
+    {
+      "test": "thanks.html: local ref contact.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/contact.html"
+    },
+    {
+      "test": "thanks.html: local ref diagnostic.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/diagnostic.html"
+    },
+    {
+      "test": "thanks.html: local ref explorer.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/explorer.html"
+    },
+    {
+      "test": "thanks.html: local ref checklist.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/checklist.html"
+    },
+    {
+      "test": "thanks.html: local ref privacy.html",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/privacy.html"
+    },
+    {
+      "test": "thanks.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "thanks.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "thanks.html: local ref assets/img/endura-logo-light.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-light.svg"
+    },
+    {
+      "test": "thanks.html: local ref assets/img/endura-logo-dark.svg",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/endura-logo-dark.svg"
+    },
+    {
+      "test": "thanks.html: local ref assets/js/theme-boot.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/theme-boot.js"
+    },
+    {
+      "test": "thanks.html: local ref assets/js/site.js",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/js/site.js"
+    },
+    {
+      "test": "thanks.html: local ref assets/img/favicon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/favicon.png"
+    },
+    {
+      "test": "thanks.html: local ref assets/img/apple-touch-icon.png",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/img/apple-touch-icon.png"
+    },
+    {
+      "test": "thanks.html: local ref site.webmanifest",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/site.webmanifest"
+    },
+    {
+      "test": "thanks.html: local ref assets/css/site.css",
+      "status": "PASS",
+      "detail": "/mnt/data/github_v34/assets/css/site.css"
+    },
+    {
+      "test": "contact form exists by id",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact Formspree action",
+      "status": "PASS",
+      "detail": "https://formspree.io/f/mnjkwryq"
+    },
+    {
+      "test": "contact POST",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "no data-netlify",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "no netlify honeypot",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "no form-name",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "Formspree _gotcha",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "Formspree _next exact",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "site.js selects contactForm",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "site.js no Netlify selector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "site.js Formspree JSON accept",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: #liabilityDiagnostic",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: #diagnosticResult",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: #diagnosticProgressBar",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: #assetStage",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: #assetModel",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: #explorerDomainList",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: #checklistUnlockForm",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: #full-checklist",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: #checkCount",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "sitemap parses",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "sitemap includes diagnostic.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "sitemap includes explorer.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "sitemap includes checklist.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "manifest parses",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.js: syntax",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.js: syntax",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.js: syntax",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "site.js: syntax",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "theme-boot.js: syntax",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "theme-boot.js: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "site.js: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.js: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.js: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.js: no Netlify form attributes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: legal identity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "packaged PDF byte-identical to supplied",
+      "status": "PASS",
+      "detail": "57f6f3c9ef992cf57d28ee6f4e313016a54133e368e6192ce0e506984876c76c / 57f6f3c9ef992cf57d28ee6f4e313016a54133e368e6192ce0e506984876c76c"
+    },
+    {
+      "test": "PDF legal name present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "PDF ACN present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "CNAME exact",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "_headers form-action Formspree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "_headers connect-src Formspree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "404.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "about.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "checklist.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "contact.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "decomm-ai.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "diagnostic.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "explorer.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "index.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "privacy.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "services.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "test": "thanks.html: CSP inline script 1",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "limitations": [
+    "A live Formspree submission cannot be completed until the endpoint is active and the site is deployed.",
+    "GitHub Pages response headers and custom-domain HTTPS must be verified after deployment.",
+    "Physical iPhone Safari and Android Chrome testing remains a live-environment check."
+  ]
+}

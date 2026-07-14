@@ -1,0 +1,37 @@
+[
+  {
+    "diagnostic_initial_hidden": true,
+    "previous_hidden": true,
+    "overflow": false
+  },
+  {
+    "diagnostic_score": "100",
+    "result_visible": true,
+    "errors": []
+  },
+  {
+    "explorer_buttons_initial": 9,
+    "hotspots_initial": 9
+  },
+  {
+    "explorer_title": "Hazardous Materials",
+    "onshore": true,
+    "offshore_hidden": true,
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "checklist_hidden_initial": true
+  },
+  {
+    "checklist_count": "3",
+    "items": 12,
+    "errors": []
+  },
+  {
+    "contact_action": "https://formspree.io/f/mnjkwryq",
+    "gotcha": 1,
+    "next": "https://enduradecom.com/thanks.html",
+    "errors": []
+  }
+]

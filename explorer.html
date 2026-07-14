@@ -1,168 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asset Explorer, decomm.ai | Endura Decommissioning</title>
-<meta name="description" content="An interactive 3D asset explorer: see how decomm.ai maps documentation-integrity across nine engineering domains onto a real offshore platform or onshore gas plant.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#F6F7F8">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Asset Explorer, decomm.ai">
-<meta property="og:description" content="See documentation-integrity mapped across nine engineering domains on a live 3D asset.">
-<meta property="og:url" content="https://enduradecom.com/explorer.html">
-<meta property="og:image" content="https://enduradecom.com/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<script>(function(){try{if(localStorage.getItem("endura-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="enhance.css">
-<style>
-  .xp{background:var(--deep);color:var(--ink);min-height:100svh;position:relative;overflow:hidden}
-  .xp-grid{position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:radial-gradient(120% 90% at 50% 40%,#000 30%,transparent 80%)}
-  .xp-wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:clamp(20px,4vw,40px)}
-  .xp-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:18px}
-  .xp-head .eyebrow{color:var(--amber-soft)}
-  .xp-head h1{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(26px,4vw,42px);color:#fff;line-height:1.05;letter-spacing:-.02em;margin-top:10px;max-width:18ch}
-  .xp-head h1 b{font-weight:500;font-style:italic;color:var(--amber-soft)}
-  .xp-toggle{display:flex;gap:0;border:1px solid rgba(255,255,255,.2);border-radius:5px;overflow:hidden;flex-shrink:0}
-  .xp-toggle button{font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:#C9D2D8;border:none;padding:11px 18px;cursor:pointer;transition:.2s}
-  .xp-toggle button.on{background:var(--amber);color:#0C1116;font-weight:600}
-
-  .xp-stage{display:grid;grid-template-columns:1fr 330px;gap:20px;align-items:stretch}
-  @media(max-width:980px){.xp-stage{grid-template-columns:1fr}}
-  .xp-canvas-box{position:relative;background:radial-gradient(70% 80% at 50% 20%,rgba(46,77,99,.25),transparent 60%),#0C1218;border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;min-height:520px}
-  #xpCanvas{width:100%;height:100%;display:block;cursor:grab}
-  #xpCanvas:active{cursor:grabbing}
-  .xp-hint{position:absolute;left:16px;bottom:14px;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--mist);pointer-events:none}
-  .xp-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
-
-  /* side panel */
-  .xp-panel{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:20px;display:flex;flex-direction:column}
-  .xp-panel .pt{font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-soft);margin-bottom:14px}
-  .domlist{display:flex;flex-direction:column;gap:5px}
-  .domrow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:9px 11px;border-radius:6px;cursor:pointer;border:1px solid transparent;transition:.18s}
-  .domrow:hover{background:rgba(255,255,255,.04)}
-  .domrow.active{background:rgba(200,116,26,.12);border-color:rgba(200,116,26,.4)}
-  .domrow .dl{display:flex;align-items:center;gap:9px;font-size:13px;color:#D7DEE3}
-  .domrow .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-  .domrow .sc{font-family:'Fragment Mono',monospace;font-size:11px}
-  .sc.low{color:#E07A5F}.sc.mid{color:#E8A24A}.sc.ok{color:#3DA18C}
-  .dot.low{background:#D96A55}.dot.mid{background:#C8741A}.dot.ok{background:#2C7A6B}
-
-  .xp-detail{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);min-height:120px}
-  .xp-detail .dh{font-family:'Newsreader',Georgia,serif;font-size:18px;color:#fff;margin-bottom:6px}
-  .xp-detail .dgap{font-family:'Fragment Mono',monospace;font-size:11px;color:var(--amber-soft);margin-bottom:10px}
-  .xp-detail p{font-size:13px;line-height:1.5;color:#9FB0BB}
-  .xp-detail .ph{color:var(--mist);font-size:13px;font-style:italic}
-
-  .xp-foot{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-  .xp-legend{display:flex;gap:16px;font-family:'Fragment Mono',monospace;font-size:10px;color:var(--mist)}
-  .xp-legend span{display:flex;align-items:center;gap:6px}
-  .xp-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
-</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Asset Explorer | decomm.ai and Endura Decommissioning</title>
+<meta content="An interactive illustrative asset explorer showing the nine decomm.ai documentation domains on offshore and onshore assets." name="description"/>
+<link href="https://enduradecom.com/explorer.html" rel="canonical"/>
+<meta content="#f7f5f0" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#12171b" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Endura Decommissioning" property="og:site_name"/>
+<meta content="Asset Explorer | decomm.ai and Endura Decommissioning" property="og:title"/>
+<meta content="An interactive illustrative asset explorer showing the nine decomm.ai documentation domains on offshore and onshore assets." property="og:description"/>
+<meta content="https://enduradecom.com/explorer.html" property="og:url"/>
+<meta content="https://enduradecom.com/assets/img/og-cover.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Endura Decommissioning - Decisions that stand up" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Asset Explorer | decomm.ai and Endura Decommissioning" name="twitter:title"/>
+<meta content="An interactive illustrative asset explorer showing the nine decomm.ai documentation domains on offshore and onshore assets." name="twitter:description"/>
+<meta content="https://enduradecom.com/assets/img/og-cover.png" name="twitter:image"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="site.webmanifest" rel="manifest"/>
+<script src="assets/js/theme-boot.js"></script>
+<link href="assets/css/site.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"decomm.ai Asset Explorer",
+  "url":"https://enduradecom.com/explorer.html",
+  "about":"Interactive illustrative mapping of asset documentation domains",
+  "isPartOf":{"@type":"WebSite","name":"Endura Decommissioning","url":"https://enduradecom.com/"}
+}</script>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav-in">
-    <a class="nav-brand" href="index.html">
-      <div class="ring"><img class="ring-light" src="logo_ring_light.svg" alt="Endura" width="34" height="34"><img class="ring-dark" src="logo_ring_dark.svg" alt="" width="34" height="34"></div>
-      <div><div class="nm">Endura Decommissioning</div><div class="sb">Decommissioning &middot; Asset Intelligence</div></div>
-    </a>
-    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="decomm-ai.html" class="active">decomm.ai</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <button class="theme-toggle" aria-label="Switch colour theme" title="Light / dark">
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <a href="contact.html" class="nav-cta">Request a pilot</a>
-    </div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="site-nav">
+<div class="wrap nav-row">
+<a aria-label="Endura Decommissioning home" class="brand" href="index.html"><span class="brand-logo"><img alt="" class="logo-for-light" src="assets/img/endura-logo-light.svg"/><img alt="" class="logo-for-dark" src="assets/img/endura-logo-dark.svg"/></span><span class="brand-copy"><span class="brand-name">Endura Decommissioning</span><span class="brand-desc">Independent decommissioning advisory</span></span></a>
+<nav aria-label="Primary navigation" class="nav-links">
+<a class="" href="index.html">Home</a><a class="" href="services.html">Services</a><a class="" href="about.html">About</a><a class="active" href="decomm-ai.html">decomm.ai</a><a class="" href="contact.html">Contact</a>
 </nav>
-
-<section class="xp">
-  <div class="xp-grid"></div>
-  <div class="xp-wrap">
-    <div class="xp-head">
-      <div>
-        <div class="eyebrow">Asset explorer · interactive · illustrative</div>
-        <h1>See the nine domains <b>mapped on the asset.</b></h1>
-      </div>
-      <div class="xp-toggle">
-        <button id="btnOffshore" class="on">Offshore platform</button>
-        <button id="btnOnshore">Onshore plant</button>
-      </div>
-    </div>
-
-    <div class="xp-stage">
-      <div class="xp-canvas-box">
-        <canvas id="xpCanvas"></canvas>
-        <div class="xp-loading" id="xpLoading">Initialising model…</div>
-        <div class="xp-hint">Drag to rotate · scroll to zoom · click a domain</div>
-      </div>
-
-      <div class="xp-panel">
-        <div class="pt">Asset Data Integrity · by domain</div>
-        <div class="domlist" id="domList"></div>
-        <div class="xp-detail" id="xpDetail">
-          <p class="ph">Select a domain, on the list or the model, to see where its documentation gaps sit and what they drive.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="xp-foot">
-      <div class="xp-legend">
-        <span><i style="background:#D96A55"></i> Critical gap</span>
-        <span><i style="background:#C8741A"></i> Moderate</span>
-        <span><i style="background:#2C7A6B"></i> Good coverage</span>
-      </div>
-      <div style="display:flex;gap:12px">
-        <a href="decomm-ai.html" class="btn btn-ghost" style="font-size:11px">← Back to decomm.ai</a>
-        <a href="contact.html" class="btn btn-primary" style="font-size:11px">Run this on your asset</a>
-      </div>
-    </div>
-    <p class="mono" style="font-size:10px;color:var(--mist);margin-top:14px">Illustrative model and figures, for demonstration of the principle, not a real asset. decomm.ai informs the ARO provision basis; it does not compute the accounting number.</p>
-  </div>
-</section>
-
-<script>
-/* Resilient Three.js loader: try local file, then CDNs, then show a clear message.
-   Guarantees the explorer never silently fails. */
-(function () {
-  var SOURCES = [
-    'three.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-    'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js',
-    'https://unpkg.com/three@0.128.0/build/three.min.js'
-  ];
-  var i = 0;
-  function tryNext() {
-    if (i >= SOURCES.length) {
-      var l = document.getElementById('xpLoading');
-      if (l) { l.innerHTML = '3D engine could not load.<br>Please check your connection or open this page from the published site.'; }
-      return;
-    }
-    var s = document.createElement('script');
-    s.src = SOURCES[i++];
-    s.onload = function () { loadExplorer(); };
-    s.onerror = function () { tryNext(); };
-    document.head.appendChild(s);
-  }
-  function loadExplorer() {
-    var e = document.createElement('script');
-    e.src = 'explorer.js';
-    document.head.appendChild(e);
-  }
-  tryNext();
-})();
-</script>
-<script src="site.js"></script>
-<script src="enhance.js"></script>
-</body>
-</html>
+<div class="nav-actions">
+<button aria-label="Switch theme" aria-pressed="false" class="theme-btn" type="button">
+<svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"></path></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="4"></circle>
+<path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M18.5 17.5 20 19M5 19l1.5-1.5M18.5 6.5 20 5"></path>
+</svg></button><a class="btn" href="contact.html">Discuss a scope</a><button aria-expanded="false" aria-label="Open navigation" class="menu-btn" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="page-hero tool-hero"><div class="wrap reveal"><div class="eyebrow">Asset explorer · interactive · illustrative</div><h1>See the nine domains mapped on the asset.</h1><p>Explore where inherited documentation supports, constrains or changes a late-life asset decision.</p></div></section>
+<section class="section"><div class="wrap explorer-shell">
+<div class="explorer-toolbar reveal"><div><div class="overline">Illustrative model</div><h2>Map each evidence domain to the asset.</h2><p>Switch asset type, drag the model to change the viewing angle, use the mouse wheel or zoom controls, and select a domain to see what its documentation supports.</p></div><div aria-label="Asset type" class="asset-switch" role="group"><button aria-pressed="true" class="active" data-asset="offshore" type="button">Offshore platform</button><button aria-pressed="false" data-asset="onshore" type="button">Onshore plant</button></div></div>
+<div class="explorer-grid">
+<article aria-label="Interactive illustrative asset model" class="asset-viewer reveal"><div class="viewer-top"><span>demo asset · sanitised</span><span id="viewerHint">Drag to rotate · scroll to zoom · select a domain</span></div><div aria-describedby="viewerHint" class="asset-stage" id="assetStage" tabindex="0"><div class="asset-model" id="assetModel">
+<svg aria-label="Illustrative offshore platform model" class="asset-svg offshore-model" role="img" viewbox="0 0 900 600"><defs><lineargradient id="sea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".04"></stop><stop offset="1" stop-color="currentColor" stop-opacity=".16"></stop></lineargradient></defs><path class="asset-water" d="M0 470 C130 440 220 500 350 468 C490 432 610 498 900 455 L900 600 L0 600Z" fill="url(#sea)"></path><g class="asset-lines"><path d="M250 190h410v210H250z M320 120h260v70H320z M360 65h180v55H360z M285 400l-65 155M625 400l70 155M365 400l-25 160M545 400l30 160M280 255h350M300 315h330M395 65v-35M510 65v-35M660 230l90 55v70h-90M250 230l-100 65v55h100"></path><path d="M210 555h520M225 510h490"></path></g></svg>
+<svg aria-label="Illustrative onshore process plant model" class="asset-svg onshore-model" hidden="" role="img" viewbox="0 0 900 600"><g class="asset-lines"><path d="M100 470h700M150 470V260h145v210M330 470V180h140v290M520 470V290h120v180M680 470V220h95v250M180 260v-70h85v70M360 180v-85h80v85M705 220v-110h45v110M120 350h640M125 405h640M295 310h35M470 250h50M640 330h40"></path><circle cx="400" cy="135" r="32"></circle><path d="M400 103V70M235 190v-35M728 110V60"></path></g></svg>
+<div class="asset-hotspots" id="assetHotspots"></div></div></div><div class="viewer-controls"><button aria-label="Zoom out" id="zoomOut" type="button">−</button><button id="resetView" type="button">Reset view</button><button aria-label="Zoom in" id="zoomIn" type="button">+</button></div></article>
+<aside class="domain-panel reveal"><div class="overline">Asset Data Integrity · by domain</div><p>Select a domain on the list or model. Scores are illustrative and demonstrate interface behaviour only.</p><div aria-label="Asset data domains" class="domain-explorer-list" id="explorerDomainList" role="tablist"></div><div class="domain-detail" id="explorerDetail" role="tabpanel"><div class="domain-detail-head"><div><span id="explorerDomainK">Selected domain</span><h3 id="explorerDomainTitle">Structural Data</h3></div><strong id="explorerDomainScore">38</strong></div><div class="meter"><span id="explorerDomainMeter" style="width:38%"></span></div><p id="explorerDomainCopy"></p><dl><div><dt>Decision influence</dt><dd id="explorerDomainImpact"></dd></div><div><dt>First evidence action</dt><dd id="explorerDomainAction"></dd></div></dl></div><div class="explorer-legend"><span class="critical">Critical gap</span><span class="moderate">Moderate</span><span class="good">Good coverage</span></div></aside>
+</div><p class="form-help explorer-disclaimer">Illustrative model and figures. No client asset or client data is shown. decomm.ai informs the engineering and ARO provision basis; it does not compute the accounting number.</p></div></section>
+<section class="contact-band"><div class="wrap contact-band-inner"><div><h2>Run the domain mapping on one real asset.</h2><p>A controlled diagnostic starts with the documents available and records every assumption and evidence gap.</p></div><div class="contact-actions"><a class="btn" href="contact.html">Request a walkthrough</a><a class="btn-outline" href="decomm-ai.html">Back to decomm.ai</a></div></div></section>
+</main>
+<footer class="footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<span class="footer-logo"><img alt="" class="logo-for-light" src="assets/img/endura-logo-light.svg"/><img alt="" class="logo-for-dark" src="assets/img/endura-logo-dark.svg"/></span>
+<h3>Endura Decommissioning</h3>
+<p>
+              Independent decommissioning advisory and engineering support for
+              studies, ARO basis, business cases, scope definition and execution
+              strategy.
+            </p>
+<div class="footer-socials">
+<a class="social-btn" href="https://www.linkedin.com/company/endura-decommissioning/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="external-icon" viewbox="0 0 24 24">
+<path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.85 3A1.92 1.92 0 1 0 4.86 6.84 1.92 1.92 0 0 0 4.85 3ZM19 12.87c0-3.22-1.72-4.72-4.02-4.72-1.85 0-2.68 1.02-3.15 1.74V8.3H8.5V19h3.33v-5.3c0-1.4.27-2.76 2-2.76 1.7 0 1.72 1.6 1.72 2.85V19H19v-6.13Z" fill="currentColor"></path>
+</svg>
+                Endura on LinkedIn</a><a class="social-btn" href="https://www.linkedin.com/in/jed-van-iersel" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="external-icon" viewbox="0 0 24 24">
+<path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.85 3A1.92 1.92 0 1 0 4.86 6.84 1.92 1.92 0 0 0 4.85 3ZM19 12.87c0-3.22-1.72-4.72-4.02-4.72-1.85 0-2.68 1.02-3.15 1.74V8.3H8.5V19h3.33v-5.3c0-1.4.27-2.76 2-2.76 1.7 0 1.72 1.6 1.72 2.85V19H19v-6.13Z" fill="currentColor"></path>
+</svg>
+                Jed van Iersel</a>
+</div>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html">About Endura</a></li>
+<li><a href="decomm-ai.html">decomm.ai</a></li>
+<li>
+<a href="assets/downloads/Endura-Decommissioning-Capability-Statement-2026.pdf">Capability statement</a>
+</li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="diagnostic.html">Liability self-check</a></li><li><a href="explorer.html">Asset explorer</a></li><li><a href="checklist.html">ARO checklist</a></li></ul>
+</div>
+<div>
+<h4>Contact and legal</h4>
+<ul>
+<li>
+<a href="mailto:jed@enduradecom.com">jed@enduradecom.com</a>
+</li>
+<li><a href="tel:+61415963003">+61 415 963 003</a></li>
+<li>Doonan, Queensland, Australia</li>
+<li><a href="privacy.html">Privacy</a></li>
+</ul>
+<p>
+              Van Iersel Projects Pty Ltd t/a Endura Decommissioning<br/>ACN
+              652 513 605
+            </p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Van Iersel Projects Pty Ltd. All rights reserved.</span><span>Endura Decommissioning is the consultancy offering. decomm.ai is
+            presented separately as an asset-intelligence platform
+            offering.</span>
+</div>
+</div>
+</footer>
+<script defer="" src="assets/js/site.js"></script>
+<script defer="" src="assets/js/explorer.js"></script>
+</body></html>
