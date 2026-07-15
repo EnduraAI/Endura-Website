@@ -55,3 +55,27 @@ Van Iersel Projects Pty Ltd t/a Endura Decommissioning, ACN 652 513 605.
 - Detailed evidence is in `reports/Release-Verification.json`, `reports/GitHub-Pages-QA.json`, `reports/Browser-QA.json` and `reports/Responsive-QA.json`.
 
 This confirms zero known errors in the packaged static files. Formspree delivery, GitHub custom-domain behaviour, HTTPS, physical devices and live social previews still require the launch checks above.
+
+## V34 Asset Explorer final engineering-model upgrade
+
+The Asset Explorer is a real WebGL 3D experience using a locally bundled and lazy-loaded Three.js runtime.
+
+- Detailed sanitised offshore platform and onshore plant models.
+- True orbit, inertia, zoom, reset and focus-selected behaviour.
+- Standard, Structure and Process viewing modes.
+- Nine-domain system highlighting and synchronised technical readout.
+- Updated static fallback images for browsers without WebGL.
+- Rendering pauses outside the viewport and while the tab is hidden.
+- Reduced-motion users receive a quieter viewer with no automatic rotation.
+- No external 3D CDN, model server or client geometry.
+
+Implementation and QA evidence are in:
+
+- `reports/Asset-Explorer-Technical-Implementation.md`
+- `reports/Asset-Explorer-Model-Upgrade.md`
+- `reports/Asset-Explorer-Final-QA-Summary.md`
+- `reports/Asset-Explorer-WebGL-QA.json`
+- `reports/Asset-Explorer-Responsive-QA.json`
+- `reports/Asset-Explorer-Fallback-QA.json`
+
+A live smoke test on physical iPhone Safari, Android Chrome, desktop Safari and Firefox remains recommended because device GPU policies vary.

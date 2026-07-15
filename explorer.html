@@ -59,15 +59,83 @@
 </header>
 <main id="main">
 <section class="page-hero tool-hero"><div class="wrap reveal"><div class="eyebrow">Asset explorer · interactive · illustrative</div><h1>See the nine domains mapped on the asset.</h1><p>Explore where inherited documentation supports, constrains or changes a late-life asset decision.</p></div></section>
-<section class="section"><div class="wrap explorer-shell">
-<div class="explorer-toolbar reveal"><div><div class="overline">Illustrative model</div><h2>Map each evidence domain to the asset.</h2><p>Switch asset type, drag the model to change the viewing angle, use the mouse wheel or zoom controls, and select a domain to see what its documentation supports.</p></div><div aria-label="Asset type" class="asset-switch" role="group"><button aria-pressed="true" class="active" data-asset="offshore" type="button">Offshore platform</button><button aria-pressed="false" data-asset="onshore" type="button">Onshore plant</button></div></div>
+<section class="section explorer-section">
+<div class="wrap explorer-shell">
+<div class="explorer-toolbar reveal">
+<div>
+<div class="overline">Interactive 3D · illustrative asset</div>
+<h2>Map the evidence domain to the physical asset.</h2>
+<p>Switch between offshore and onshore asset types, rotate the model in three dimensions and select a domain to see the evidence that influences the decision basis.</p>
+</div>
+<div aria-label="Asset type" class="asset-switch" role="group">
+<button aria-pressed="true" class="active" data-asset="offshore" type="button">Offshore platform</button>
+<button aria-pressed="false" data-asset="onshore" type="button">Onshore plant</button>
+</div>
+</div>
 <div class="explorer-grid">
-<article aria-label="Interactive illustrative asset model" class="asset-viewer reveal"><div class="viewer-top"><span>demo asset · sanitised</span><span id="viewerHint">Drag to rotate · scroll to zoom · select a domain</span></div><div aria-describedby="viewerHint" class="asset-stage" id="assetStage" tabindex="0"><div class="asset-model" id="assetModel">
-<svg aria-label="Illustrative offshore platform model" class="asset-svg offshore-model" role="img" viewbox="0 0 900 600"><defs><lineargradient id="sea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".04"></stop><stop offset="1" stop-color="currentColor" stop-opacity=".16"></stop></lineargradient></defs><path class="asset-water" d="M0 470 C130 440 220 500 350 468 C490 432 610 498 900 455 L900 600 L0 600Z" fill="url(#sea)"></path><g class="asset-lines"><path d="M250 190h410v210H250z M320 120h260v70H320z M360 65h180v55H360z M285 400l-65 155M625 400l70 155M365 400l-25 160M545 400l30 160M280 255h350M300 315h330M395 65v-35M510 65v-35M660 230l90 55v70h-90M250 230l-100 65v55h100"></path><path d="M210 555h520M225 510h490"></path></g></svg>
-<svg aria-label="Illustrative onshore process plant model" class="asset-svg onshore-model" hidden="" role="img" viewbox="0 0 900 600"><g class="asset-lines"><path d="M100 470h700M150 470V260h145v210M330 470V180h140v290M520 470V290h120v180M680 470V220h95v250M180 260v-70h85v70M360 180v-85h80v85M705 220v-110h45v110M120 350h640M125 405h640M295 310h35M470 250h50M640 330h40"></path><circle cx="400" cy="135" r="32"></circle><path d="M400 103V70M235 190v-35M728 110V60"></path></g></svg>
-<div class="asset-hotspots" id="assetHotspots"></div></div></div><div class="viewer-controls"><button aria-label="Zoom out" id="zoomOut" type="button">−</button><button id="resetView" type="button">Reset view</button><button aria-label="Zoom in" id="zoomIn" type="button">+</button></div></article>
-<aside class="domain-panel reveal"><div class="overline">Asset Data Integrity · by domain</div><p>Select a domain on the list or model. Scores are illustrative and demonstrate interface behaviour only.</p><div aria-label="Asset data domains" class="domain-explorer-list" id="explorerDomainList" role="tablist"></div><div class="domain-detail" id="explorerDetail" role="tabpanel"><div class="domain-detail-head"><div><span id="explorerDomainK">Selected domain</span><h3 id="explorerDomainTitle">Structural Data</h3></div><strong id="explorerDomainScore">38</strong></div><div class="meter"><span id="explorerDomainMeter" style="width:38%"></span></div><p id="explorerDomainCopy"></p><dl><div><dt>Decision influence</dt><dd id="explorerDomainImpact"></dd></div><div><dt>First evidence action</dt><dd id="explorerDomainAction"></dd></div></dl></div><div class="explorer-legend"><span class="critical">Critical gap</span><span class="moderate">Moderate</span><span class="good">Good coverage</span></div></aside>
-</div><p class="form-help explorer-disclaimer">Illustrative model and figures. No client asset or client data is shown. decomm.ai informs the engineering and ARO provision basis; it does not compute the accounting number.</p></div></section>
+<article aria-label="Interactive illustrative three-dimensional asset model" class="asset-viewer reveal">
+<div class="viewer-top">
+<span class="viewer-badge"><i aria-hidden="true"></i>WebGL 3D · engineering model · sanitised</span>
+<span id="viewerHint">Drag to orbit · scroll or pinch to zoom · select a domain · double-click to focus</span>
+</div>
+<div aria-describedby="viewerHint" aria-label="3D asset viewport. Use arrow keys to rotate, plus and minus to zoom, and R to reset." class="asset-stage asset-stage-3d" id="assetStage" tabindex="0">
+<canvas aria-hidden="true" hidden="" id="assetCanvas"></canvas>
+<div class="asset-fallback" id="assetFallback">
+<img alt="Static fallback view of the illustrative offshore platform model" id="assetFallbackImage" src="assets/img/explorer-offshore-fallback.png"/>
+<div class="fallback-note"><strong>Static asset view</strong><span id="assetFallbackMessage">Interactive 3D loads when the viewer enters the screen.</span></div>
+</div>
+<div aria-live="polite" class="asset-loading" hidden="" id="assetLoading"><span></span><strong>Initialising engineering model</strong></div>
+<div aria-hidden="false" class="asset-hotspots" id="assetHotspots"></div>
+<div aria-hidden="true" class="viewer-compass"><span>N</span><i></i></div>
+<div class="viewer-asset-label"><span>Active model</span><strong id="activeAssetLabel">Offshore platform</strong></div>
+</div>
+<div aria-label="3D viewer controls" class="viewer-controls">
+<div class="viewer-control-group zoom-controls" aria-label="Camera controls">
+<button aria-label="Zoom out" id="zoomOut" type="button"><span aria-hidden="true">−</span></button>
+<button id="resetView" type="button">Reset view</button>
+<button aria-label="Zoom in" id="zoomIn" type="button"><span aria-hidden="true">+</span></button>
+</div>
+<div class="viewer-control-group view-mode-controls" aria-label="Technical viewing mode" role="group">
+<span class="viewer-control-label">View</span>
+<button aria-pressed="true" class="active" data-view-mode="standard" type="button">Standard</button>
+<button aria-pressed="false" data-view-mode="structure" type="button">Structure</button>
+<button aria-pressed="false" data-view-mode="process" type="button">Process</button>
+</div>
+<div class="viewer-control-group viewer-action-controls">
+<button id="focusDomain" type="button">Focus selected</button>
+<button aria-pressed="true" id="autoRotate" type="button">Pause rotation</button>
+</div>
+</div>
+</article>
+<aside class="domain-panel reveal">
+<div class="domain-panel-head">
+<div>
+<div class="overline">Asset Data Integrity · by domain</div>
+<h3>Documentation position</h3>
+</div>
+<span class="illustrative-tag">Illustrative</span>
+</div>
+<p>Select a model hotspot or domain below. The interface synchronises the physical location, illustrative score and first evidence action.</p>
+<div aria-label="Asset data domains" class="domain-explorer-list" id="explorerDomainList" role="tablist"></div>
+<div aria-live="polite" class="domain-detail" id="explorerDetail" role="tabpanel">
+<div class="domain-detail-head">
+<div><span id="explorerDomainK">Selected domain</span><h3 id="explorerDomainTitle">Structural Data</h3><span class="domain-state critical" id="explorerDomainStatus">Critical gap</span></div>
+<strong id="explorerDomainScore">38</strong>
+</div>
+<div aria-hidden="true" class="meter"><span id="explorerDomainMeter" style="width:38%"></span></div>
+<p id="explorerDomainCopy"></p>
+<dl>
+<div><dt>Decision influence</dt><dd id="explorerDomainImpact"></dd></div>
+<div><dt>First evidence action</dt><dd id="explorerDomainAction"></dd></div>
+</dl>
+</div>
+<div aria-label="Domain score legend" class="explorer-legend"><span class="critical">Critical gap</span><span class="moderate">Moderate</span><span class="good">Good coverage</span></div>
+</aside>
+</div>
+<p class="form-help explorer-disclaimer">Illustrative model and figures. No client asset or client data is shown. decomm.ai informs the engineering and ARO provision basis; it does not compute the accounting number. Domain weighting and commercial logic are not exposed.</p>
+<p aria-live="polite" class="sr-only" id="explorerLiveStatus"></p>
+</div>
+</section>
 <section class="contact-band"><div class="wrap contact-band-inner"><div><h2>Run the domain mapping on one real asset.</h2><p>A controlled diagnostic starts with the documents available and records every assumption and evidence gap.</p></div><div class="contact-actions"><a class="btn" href="contact.html">Request a walkthrough</a><a class="btn-outline" href="decomm-ai.html">Back to decomm.ai</a></div></div></section>
 </main>
 <footer class="footer">
