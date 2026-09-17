@@ -4,12 +4,12 @@
     {
       "id": "01",
       "title": "The evidence behind a defensible closure estimate",
-      "status": "technical reading note awaiting owner technical review",
+      "status": "technical reading note",
       "body_word_count": 448,
       "diagram_concept": "A traceability diagram with four columns: asset/source record; scope and method; cost inputs and uncertainty; engineering estimate. Add a separate finance branch from the estimate to accounting adjustments and provision. Give every connector a record ID; do not use amounts or an implied assurance score.",
       "references": [
         {
-          "title": "AASB 137, paragraphs 14 and 36–47",
+          "title": "AASB 137, paragraphs 14 and 36 to 47",
           "url": "https://standards.aasb.gov.au/aasb-137-jan-2026"
         },
         {
@@ -25,13 +25,13 @@
           "url": "https://standards.auasb.gov.au/asa-620-mar-2021"
         }
       ],
-      "markdown": "**Standfirst:** A useful estimate lets another person reconstruct the route from the asset record to the number, including the assumptions that could change it.\n\n### 1. Start with the decision and the boundary\n\nAn estimate prepared to compare removal methods answers a different question from an estimate supporting a financial provision. State the purpose, asset boundary, end state, pricing date, execution window and exclusions before presenting the total. Otherwise, two apparently conflicting numbers may simply describe different work.\n\nBegin with a physical inventory that can be reconciled to the scope. A platform, pipeline, well and onshore receiving facility can each introduce separate work packages. Include the interfaces: isolation, cleaning, temporary support, transport, waste acceptance, surveys and evidence required after execution. An exclusion needs both a reason and an identified destination; “by others” is incomplete unless someone owns that work in another package.\n\n### 2. Connect quantities to a practicable method\n\nA quantity multiplied by a rate is only useful when the method behind the rate remains feasible. Explain what must be true for the selected vessel, lifting sequence, cutting approach or waste route to work. Record whether quantities come from reconciled drawings, survey, inspection, contractor information or an assumption. Keep the source revision beside the input rather than in an unstructured attachment folder.\n\nConsider a module with an uncertain weight. The important question is not merely how much steel to add to the quantity. It is whether the uncertainty could change the lifting arrangement, crane selection, offshore sequence or transport configuration. That is a method uncertainty with several cost consequences. Treating it as a small quantity allowance can hide the actual decision.\n\n### 3. Make uncertainty reviewable\n\nSeparate missing scope, variable quantities, uncertain productivity, market rates and discrete events. Record how each has been treated so that the same exposure is not counted in a duration allowance, a rate premium and contingency. A range should have an explanation of what changes across it. A confidence label unsupported by a defined method does not make the estimate more reliable.\n\nFor financial reporting, AASB 137 addresses recognition and measurement of provisions, including the best estimate, uncertainty and discounting where material. Those are accounting judgments. Engineering should supply the scope, methods, timing and evidence needed to inform them, with a clear reconciliation to the finance team's calculation. [AASB 137, paragraphs 14 and 36–47](https://standards.aasb.gov.au/aasb-137-jan-2026).\n\n### 4. Build the review file alongside the estimate\n\nASA 540 focuses the auditor's work on matters including methods, assumptions, data and estimation uncertainty. ASA 500 addresses the sufficiency and appropriateness of audit evidence. Neither standard provides a label that an engineering consultant can award to an estimate in advance. [ASA 540](https://standards.auasb.gov.au/asa-540-mar-2021), [ASA 500](https://standards.auasb.gov.au/asa-500-mar-2021).\n\nA practical review file contains a scope-to-cost map, an assumption register, source records, method narrative, sensitivity results and changes since the preceding estimate. Record unresolved contradictions explicitly. The key test is whether a reviewer can select a material cost line and trace it back to an identifiable obligation, asset, quantity and execution assumption without relying on the estimator's memory.\n\n**Diagram concept:** A traceability diagram with four columns: asset/source record; scope and method; cost inputs and uncertainty; engineering estimate. Add a separate finance branch from the estimate to accounting adjustments and provision. Give every connector a record ID; do not use amounts or an implied assurance score.\n\n**Primary reading:** AASB 137 (January 2026 compilation, select the version applicable to the reporting period); ASA 540 (portal title December 2022); ASA 500 (December 2022); [ASA 620, Using the Work of an Auditor's Expert](https://standards.auasb.gov.au/asa-620-mar-2021). ASA 620 applies to the auditor's expert, not automatically to management's engineering adviser.",
+      "markdown": "**Standfirst:** A useful estimate lets another person reconstruct the route from the asset record to the number, including the assumptions that could change it.\n\n### 1. Start with the decision and the boundary\n\nAn estimate prepared to compare removal methods answers a different question from an estimate supporting a financial provision. State the purpose, asset boundary, end state, pricing date, execution window and exclusions before presenting the total. Otherwise, two apparently conflicting numbers may simply describe different work.\n\nBegin with a physical inventory that can be reconciled to the scope. A platform, pipeline, well and onshore receiving facility can each introduce separate work packages. Include the interfaces: isolation, cleaning, temporary support, transport, waste acceptance, surveys and evidence required after execution. An exclusion needs both a reason and an identified destination; “by others” is incomplete unless someone owns that work in another package.\n\n### 2. Connect quantities to a practicable method\n\nA quantity multiplied by a rate is only useful when the method behind the rate remains feasible. Explain what must be true for the selected vessel, lifting sequence, cutting approach or waste route to work. Record whether quantities come from reconciled drawings, survey, inspection, contractor information or an assumption. Keep the source revision beside the input rather than in an unstructured attachment folder.\n\nConsider a module with an uncertain weight. The important question is not merely how much steel to add to the quantity. It is whether the uncertainty could change the lifting arrangement, crane selection, offshore sequence or transport configuration. That is a method uncertainty with several cost consequences. Treating it as a small quantity allowance can hide the actual decision.\n\n### 3. Make uncertainty reviewable\n\nSeparate missing scope, variable quantities, uncertain productivity, market rates and discrete events. Record how each has been treated so that the same exposure is not counted in a duration allowance, a rate premium and contingency. A range should have an explanation of what changes across it. A confidence label unsupported by a defined method does not make the estimate more reliable.\n\nFor financial reporting, AASB 137 addresses recognition and measurement of provisions, including the best estimate, uncertainty and discounting where material. Those are accounting judgments. Engineering should supply the scope, methods, timing and evidence needed to inform them, with a clear reconciliation to the finance team's calculation. [AASB 137, paragraphs 14 and 36 to 47](https://standards.aasb.gov.au/aasb-137-jan-2026).\n\n### 4. Build the review file alongside the estimate\n\nASA 540 focuses the auditor's work on matters including methods, assumptions, data and estimation uncertainty. ASA 500 addresses the sufficiency and appropriateness of audit evidence. Neither standard provides a label that an engineering consultant can award to an estimate in advance. [ASA 540](https://standards.auasb.gov.au/asa-540-mar-2021), [ASA 500](https://standards.auasb.gov.au/asa-500-mar-2021).\n\nA practical review file contains a scope-to-cost map, an assumption register, source records, method narrative, sensitivity results and changes since the preceding estimate. Record unresolved contradictions explicitly. The key test is whether a reviewer can select a material cost line and trace it back to an identifiable obligation, asset, quantity and execution assumption without relying on the estimator's memory.\n\n**Diagram concept:** A traceability diagram with four columns: asset/source record; scope and method; cost inputs and uncertainty; engineering estimate. Add a separate finance branch from the estimate to accounting adjustments and provision. Give every connector a record ID; do not use amounts or an implied assurance score.\n\n**Primary reading:** AASB 137 (January 2026 compilation, select the version applicable to the reporting period); ASA 540 (portal title December 2022); ASA 500 (December 2022); [ASA 620, Using the Work of an Auditor's Expert](https://standards.auasb.gov.au/asa-620-mar-2021). ASA 620 applies to the auditor's expert, not automatically to management's engineering adviser.",
       "body_word_count_method": "Whitespace-separated words in body paragraphs; excludes section headings; includes link labels."
     },
     {
       "id": "02",
       "title": "The temporary state can govern the lift",
-      "status": "technical reading note awaiting owner technical review",
+      "status": "technical reading note",
       "body_word_count": 493,
       "diagram_concept": "Four schematic structural panels: original support; temporary support with remaining attachments; free suspension; staged landing. Use identical object geometry and highlighted load paths. Under each show “restraint / governing uncertainty / hold-point evidence”. Explicitly label the panels conceptual and without design dimensions.",
       "references": [
@@ -58,7 +58,7 @@
     {
       "id": "03",
       "title": "Inherited asset records: find the evidence that changes the decision",
-      "status": "technical reading note awaiting owner technical review",
+      "status": "technical reading note",
       "body_word_count": 473,
       "diagram_concept": "A matrix with decision rows and evidence columns. Each cell is labelled “supports / conflicts / absent / not needed”, with a source reference. Show a small separate key for record revision and physical verification date; avoid turning it into a numerical integrity score.",
       "references": [
@@ -85,7 +85,7 @@
     {
       "id": "04",
       "title": "How to read a NOPSEMA record without overreading it",
-      "status": "technical reading note awaiting owner technical review",
+      "status": "technical reading note",
       "body_word_count": 470,
       "diagram_concept": "A branching record-classification diagram: “public record” to “proposal / assessment / decision / enforcement”, each leading to one short permitted claim and one boundary. A separate lower lane shows “activity acceptance” and “title surrender decision” as different record types with their decision makers.",
       "references": [
@@ -112,7 +112,7 @@
     {
       "id": "05",
       "title": "Closure decisions are often won or lost at the interfaces",
-      "status": "technical reading note awaiting owner technical review",
+      "status": "technical reading note",
       "body_word_count": 469,
       "diagram_concept": "An interface matrix: rows “asset preparation / offshore removal / transport / receipt / final evidence”; columns “condition required / party providing it / party accepting it / record / unresolved dependency”. Show one illustrative item travelling down the rows, with no invented project quantities.",
       "references": [
@@ -139,7 +139,7 @@
     {
       "id": "06",
       "title": "Estimate drift: explain what changed before explaining the total",
-      "status": "technical reading note awaiting owner technical review",
+      "status": "technical reading note",
       "body_word_count": 503,
       "diagram_concept": "Two aligned reconciliation panels. First: previous engineering cost to revised engineering cost, with labelled driver categories and no fabricated values. Second: revised scheduled cash flows to the financial provision, with separately identified finance assumptions. Show an “offsetting changes” annotation without implying a numerical example is measured data.",
       "references": [

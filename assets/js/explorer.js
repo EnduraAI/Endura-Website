@@ -271,11 +271,8 @@
       try {
         initialiseThree();
         state.threeReady = true;
-        renderState("Interactive 3D model");
-        loading?.setAttribute("hidden", "");
-        fallback?.setAttribute("hidden", "");
+        // Keep the static view until the first successful rendered frame.
         canvas.removeAttribute("hidden");
-        hotspotLayer.classList.remove("fallback-hotspots");
       } catch (error) {
         console.error("Asset Explorer 3D initialisation failed", error);
         showFallback("The interactive model could not initialise. The static model and domain controls remain available.");
@@ -283,7 +280,7 @@
       return;
     }
     const script = document.createElement("script");
-    script.src = "assets/vendor/three.min.js?v=4.4.0";
+    script.src = "assets/vendor/three.min.js?v=4.5.1";
     script.async = true;
     const engineTimer=setTimeout(()=>showFallback("The 3D engine took too long to load. The static model and domain controls remain available."),12000);
     script.onload = () => {
@@ -296,11 +293,8 @@
       try {
         initialiseThree();
         state.threeReady = true;
-        renderState("Interactive 3D model");
-        loading?.setAttribute("hidden", "");
-        fallback?.setAttribute("hidden", "");
+        // Keep the static view until the first successful rendered frame.
         canvas.removeAttribute("hidden");
-        hotspotLayer.classList.remove("fallback-hotspots");
       } catch (error) {
         console.error("Asset Explorer 3D initialisation failed", error);
         showFallback("The interactive model could not initialise. The static model and domain controls remain available.");
@@ -1925,6 +1919,13 @@
       }
       updateCamera(delta);
       try { renderer.render(scene, camera); } catch (error) { showFallback("The interactive view stopped. Evidence domains remain available below."); return; }
+      if (!stage.hasAttribute("data-first-frame")) {
+        stage.setAttribute("data-first-frame", "true");
+        renderState("Interactive 3D model");
+        loading?.setAttribute("hidden", "");
+        fallback?.setAttribute("hidden", "");
+        hotspotLayer.classList.remove("fallback-hotspots");
+      }
       updateHotspotPositions(false);
       const unsettled = Math.abs(renderedAzimuth-azimuth) + Math.abs(renderedElevation-elevation) + Math.abs(renderedDistance-distance) + renderedTarget.distanceTo(target) > .002;
       if (autoRotate || dragging || assembling || unsettled || dirty || Math.abs(azimuthVelocity)+Math.abs(elevationVelocity)>.00002) requestRender();
