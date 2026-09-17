@@ -1,0 +1,244 @@
+{
+  "offshore": {
+    "label": "Offshore module removal",
+    "short": "Offshore module",
+    "scope": "Remove a redundant topsides module and transfer it to an onshore receiving facility. Wells, substructure and unrelated systems are outside this example.",
+    "note": "field-note-02.html",
+    "domain": "Structural",
+    "stages": [
+      {
+        "title": "Define the removal question.",
+        "body": "Which removal approach should be taken forward for engineering development, and what information is needed before that choice can be made?",
+        "rows": [
+          [
+            "Required end state",
+            "The module removed, retained interfaces left in the agreed condition, and material transferred to an identified receiving route."
+          ],
+          [
+            "Decision boundary",
+            "Preparation, temporary support, separation, lifting, transport and receiving conditions."
+          ],
+          [
+            "Before comparison",
+            "Agree the scope, exclusions and decision criteria with the asset owner."
+          ]
+        ],
+        "output": "A scope and decision statement."
+      },
+      {
+        "title": "Establish what the records support.",
+        "body": "A removal concept depends on current condition and configuration as well as the original design. Keep unresolved differences visible.",
+        "rows": [
+          [
+            "Structure and inspection",
+            "What supports the module, which connections remain, and what has changed?"
+          ],
+          [
+            "Weight and modifications",
+            "What is included in the weight and centre-of-gravity basis, including retained contents and temporary equipment?"
+          ],
+          [
+            "Process and isolation",
+            "Where are the retained-system boundaries, and what preparation remains?"
+          ],
+          [
+            "Transport and receiving",
+            "What constraints apply to load transfer, vessel or ground support, transport and acceptance ashore?"
+          ]
+        ],
+        "callout": "Illustrative open issue: the weight report and modification record do not reconcile. Record the competing information and define how it will be checked.",
+        "output": "A source register and prioritised verification actions."
+      },
+      {
+        "title": "Develop comparable removal approaches.",
+        "body": "Describe each approach against the same scope and end state. An option remains conditional until its assumptions are supported.",
+        "rows": [
+          [
+            "Option A / Remove as one unit",
+            "Review the installed, partly released, suspended and landed states, together with lifting and transport constraints."
+          ],
+          [
+            "Option B / Remove in engineered sections",
+            "Review additional preparation, temporary stability, access, handling and repeated transfer operations."
+          ]
+        ],
+        "callout": "Neither approach is presented as feasible or preferred in this example.",
+        "output": "An option register with scope, assumptions and exclusions."
+      },
+      {
+        "title": "Compare the factors that change the method.",
+        "body": "Review feasibility constraints before making trade-offs. Explain the evidence behind each comparison and the uncertainty that remains.",
+        "rows": [
+          [
+            "Safety and temporary states",
+            "Load paths, restraint, access, exposure and the controls needed at each transition."
+          ],
+          [
+            "Technical feasibility",
+            "Condition, weight basis, lifting arrangements and transport or receiving limitations."
+          ],
+          [
+            "Environment and materials",
+            "Residual contents, waste classification, containment and receiving requirements."
+          ],
+          [
+            "Schedule and interfaces",
+            "Preparation duration, vessel or plant availability, handovers and dependencies."
+          ],
+          [
+            "Cost basis",
+            "Work quantities, method assumptions, commercial inputs and the effect of unresolved information."
+          ],
+          [
+            "Applicable requirements",
+            "The obligations, approvals and commitments relevant to the actual scope and jurisdiction."
+          ]
+        ],
+        "callout": "If missing information could change whether an option is feasible, identify the verification required before recommending it.",
+        "output": "A comparison with traceable reasons, limitations and items requiring resolution."
+      },
+      {
+        "title": "Carry the findings into a decision brief.",
+        "body": "The brief records the decision sought, the options examined and the basis for the next step. Any recommendation states the conditions on which it depends.",
+        "rows": [
+          [
+            "Scope and options",
+            "Agreed boundaries, interfaces, options considered and screening reasons."
+          ],
+          [
+            "Decision basis",
+            "Evidence, assumptions and limitations supporting the comparison."
+          ],
+          [
+            "Open actions",
+            "Action owners, required evidence and the point at which each issue must be resolved."
+          ]
+        ],
+        "callout": "Illustrative next step: resolve the weight discrepancy and review the temporary structural states before selecting a removal approach.",
+        "output": "A decision brief and action register for the next review.",
+        "boundary": "A decision brief supports the next review. It does not authorise the lifting or removal operation."
+      }
+    ]
+  },
+  "onshore": {
+    "label": "Onshore process area dismantling",
+    "short": "Onshore process area",
+    "scope": "Dismantle a redundant process area beside retained infrastructure. Soil remediation and below-ground assets require separate scope confirmation.",
+    "note": "field-note-05.html",
+    "domain": "Isolation",
+    "stages": [
+      {
+        "title": "Define the dismantling question.",
+        "body": "Which dismantling approach should be developed, and what must be established about the area and its retained interfaces?",
+        "rows": [
+          [
+            "Required end state",
+            "The agreed plant removed, retained infrastructure protected, and the remaining site condition documented."
+          ],
+          [
+            "Decision boundary",
+            "Isolation, cleaning, access, temporary support, dismantling, handling and material transfer."
+          ],
+          [
+            "Before comparison",
+            "Agree the physical limits, operating interfaces and evidence required at handover."
+          ]
+        ],
+        "output": "A scope and decision statement."
+      },
+      {
+        "title": "Reconcile the plant with its records.",
+        "body": "Establish the current condition, retained connections and access limitations before fixing a dismantling sequence.",
+        "rows": [
+          [
+            "Layout, structure and inspection",
+            "What remains supported or restrained as equipment is removed?"
+          ],
+          [
+            "Process and service records",
+            "Which systems remain operational, and where are the agreed boundaries?"
+          ],
+          [
+            "Materials and cleaning",
+            "What is known about residues and materials that affect preparation and handling?"
+          ],
+          [
+            "Access, ground and receiving",
+            "What constraints apply to plant positions, handling routes and material acceptance?"
+          ]
+        ],
+        "callout": "Illustrative open issue: a service connection appears on one drawing but not another. Establish its identity and status before the affected scope is released.",
+        "output": "An evidence register and targeted verification scope."
+      },
+      {
+        "title": "Develop the dismantling approaches.",
+        "body": "Compare approaches against the same asset boundary and completion criteria. Some areas may require a combination of methods.",
+        "rows": [
+          [
+            "Option A / Separate and lift selected equipment",
+            "Review weight, lifting access, structural connections, temporary support and landing arrangements."
+          ],
+          [
+            "Option B / Dismantle progressively within a defined area",
+            "Review the sequence, reach and access limits, intermediate stability, exclusion arrangements and segregation."
+          ]
+        ],
+        "callout": "Method suitability remains subject to the actual configuration, condition and site constraints.",
+        "output": "An option register with method boundaries and assumptions."
+      },
+      {
+        "title": "Test the approach against the site.",
+        "body": "Compare the practical implications of each method and identify constraints that must be resolved before work can proceed.",
+        "rows": [
+          [
+            "Safety and temporary states",
+            "Changing support and restraint, access, work exposure and effects on adjacent infrastructure."
+          ],
+          [
+            "Technical feasibility",
+            "Condition, geometry, plant access, lifting arrangements and ground or support limitations."
+          ],
+          [
+            "Environment and materials",
+            "Dust, noise, residues, segregation and receiving-facility requirements, as applicable."
+          ],
+          [
+            "Schedule and interfaces",
+            "Operating constraints, isolation releases, shared routes and material handling."
+          ],
+          [
+            "Cost basis",
+            "Preparation, access, temporary works, dismantling effort and material handling assumptions."
+          ],
+          [
+            "Applicable requirements",
+            "The obligations, permits and acceptance criteria relevant to the actual site and works."
+          ]
+        ],
+        "callout": "A method should not rely on an unverified service boundary or structural condition.",
+        "output": "A reasoned comparison and prioritised information requirements."
+      },
+      {
+        "title": "Carry the decision into the next stage.",
+        "body": "Document what can progress, what remains conditional and what each party needs to provide.",
+        "rows": [
+          [
+            "Scope and approach",
+            "Retained-system boundaries, dismantling approaches and comparison basis."
+          ],
+          [
+            "Planning assumptions",
+            "Preparation, access and material-pathway assumptions."
+          ],
+          [
+            "Engineering and actions",
+            "Interfaces, proposed engineering tasks and evidence required before the affected work is released."
+          ]
+        ],
+        "callout": "Illustrative next step: confirm the service boundary and current structural condition before developing the detailed dismantling sequence.",
+        "output": "A decision brief and action register for the next review.",
+        "boundary": "The example explains a study process. It is not a demolition plan or an instruction to carry out work."
+      }
+    ]
+  }
+}

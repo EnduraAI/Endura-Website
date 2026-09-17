@@ -1,16 +1,1 @@
-(function () {
-  try {
-    var saved = localStorage.getItem("endura-theme");
-    var theme =
-      saved ||
-      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    document.documentElement.dataset.theme = theme;
-  } catch (e) {
-    document.documentElement.dataset.theme = matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches
-      ? "dark"
-      : "light";
-  }
-  document.documentElement.classList.remove("no-js");
-})();
+console.info(`Endura Decommissioning site build: endura-4.4`),(function(){try{var e=localStorage.getItem(`endura-theme`)||(matchMedia(`(prefers-color-scheme: dark)`).matches?`dark`:`light`);document.documentElement.dataset.theme=e}catch{document.documentElement.dataset.theme=matchMedia(`(prefers-color-scheme: dark)`).matches?`dark`:`light`}document.documentElement.classList.remove(`no-js`)})();

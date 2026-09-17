@@ -14,103 +14,35 @@
   const autoRotateButton = document.getElementById("autoRotate");
   const focusDomainButton = document.getElementById("focusDomain");
   const viewModeButtons = [...document.querySelectorAll("[data-view-mode]")];
+  const cameraButtons = [...document.querySelectorAll("[data-camera-view]")];
+  function renderState(label) { const badge=document.getElementById("modelRenderState"); if(badge)badge.textContent=label; }
   if (!stage || !canvas || !hotspotLayer || !list) return;
+  if (stage.dataset.explorerInitialised === 'true') return;
+  stage.dataset.explorerInitialised = 'true';
+  stage.setAttribute('tabindex', '0');
+  stage.setAttribute('aria-label', '3D asset viewport. Use arrow keys to rotate, plus and minus to zoom, and R to reset.');
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const domains = [
-    {
-      key: "Structural",
-      title: "Structural Data",
-      score: 38,
-      status: "Critical gap",
-      copy: "Checks current condition, degradation, modification history and the temporary-state basis behind removal and support decisions.",
-      impact: "Removal method, access, lifting, temporary support and sequence.",
-      action: "Reconcile structural drawings, inspection evidence and modification records.",
-    },
-    {
-      key: "Hazmat",
-      title: "Hazardous Materials",
-      score: 41,
-      status: "Critical gap",
-      copy: "Tests whether hazardous-material and NORM registers, surveys and sampling history support packaging and disposal planning.",
-      impact: "PPE, decontamination, waste routing, programme and cost.",
-      action: "Validate the register against current areas, quantities and classifications.",
-    },
-    {
-      key: "Isolation",
-      title: "Isolation and Containment",
-      score: 44,
-      status: "Critical gap",
-      copy: "Reviews retained inventories, line status, isolation records and boundary conditions affecting safe preparation.",
-      impact: "Make-safe scope, offshore exposure and execution interfaces.",
-      action: "Reconcile the isolation philosophy to current P&IDs and field status.",
-    },
-    {
-      key: "As-builts",
-      title: "As-Built Drawings",
-      score: 55,
-      status: "Moderate",
-      copy: "Locates modification drift, missing packages and configuration changes that affect the scope basis.",
-      impact: "Quantities, access, interfaces and method definition.",
-      action: "Prioritise drawings connected to high-consequence scope decisions.",
-    },
-    {
-      key: "P&IDs",
-      title: "P&IDs",
-      score: 62,
-      status: "Moderate",
-      copy: "Checks revision alignment, tie-ins, process boundaries and whether the process basis reflects the current asset.",
-      impact: "Isolation, residual inventory, cleaning and scope limits.",
-      action: "Resolve revision conflicts and field-verify critical boundaries.",
-    },
-    {
-      key: "Waste",
-      title: "Waste Classification",
-      score: 64,
-      status: "Moderate",
-      copy: "Reviews expected waste streams, classifications, routing assumptions and current disposal capacity.",
-      impact: "Disposal route, logistics, permits, programme and recovery value.",
-      action: "Connect material quantities to confirmed classifications and facilities.",
-    },
-    {
-      key: "Well P&A",
-      title: "Well P&A",
-      score: 71,
-      status: "Good coverage",
-      copy: "Separates well-scope confidence from facility scope and exposes unresolved suspended-well information.",
-      impact: "Battery limits, schedule, regulatory pathway and liability allocation.",
-      action: "Confirm well status, ownership, records and scope demarcation.",
-    },
-    {
-      key: "Weight",
-      title: "Weight Control",
-      score: 79,
-      status: "Good coverage",
-      copy: "Reconciles weight reports, modifications and allowances before lift or transport strategies harden.",
-      impact: "Lift studies, transport, support design and contingency.",
-      action: "Close the delta between weight reports, drawings and change records.",
-    },
-    {
-      key: "Inspection",
-      title: "Inspection Records",
-      score: 84,
-      status: "Good coverage",
-      copy: "Connects current condition evidence to access, dismantling and temporary-state assumptions.",
-      impact: "Personnel access, plant selection, sequence and risk controls.",
-      action: "Confirm the inspection basis remains current for the intended method.",
-    },
-  ];
+  const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let reduceMotion = motionPreference.matches;
+  const evidence=window.EnduraEvidence?.current;
+  if(!evidence){stage.dataset.explorerInitialised='false';return;}
+  const domains=evidence.domains.map(d=>({...d,status:window.EnduraEvidence.band(d.score).label}));
 
   const state = {
-    asset: "offshore",
+    asset: stage.dataset.defaultAsset === "onshore" ? "onshore" : "offshore",
+    viewMode: "standard",
     selected: "Structural",
     preview: null,
     threeReady: false,
     threeFailed: false,
+    pendingFocus: false,
   };
 
+  const requestedDomain=new URLSearchParams(location.search).get("domain");
+  if(domains.some(d=>d.key===requestedDomain))state.selected=requestedDomain;
+
   function qualityClass(score) {
-    return score < 50 ? "critical" : score < 70 ? "moderate" : "good";
+    return window.EnduraEvidence.band(score).key;
   }
 
   function domainByKey(key) {
@@ -118,11 +50,25 @@
   }
 
   function renderDomainList() {
+    // Keep actual controls stable so selection never discards keyboard focus.
+    if (list.querySelector("button")) {
+      list.querySelectorAll("button").forEach(button => {
+        const active = button.dataset.domain === state.selected;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-selected", String(active));
+        button.tabIndex = active ? 0 : -1;
+      });
+      return;
+    }
     list.innerHTML = domains
       .map((domain, index) => {
         const active = domain.key === state.selected;
         const quality = qualityClass(domain.score);
-        return `<button type="button" role="tab" class="explorer-domain-btn ${active ? "active" : ""}" data-domain="${domain.key}" aria-selected="${active}" tabindex="${active ? "0" : "-1"}"><span class="domain-index">${String(index + 1).padStart(2, "0")}</span><span class="domain-name">${domain.title}</span><span class="domain-status ${quality}">${domain.status}</span><strong class="${quality}">${domain.score}</strong></button>`;
+        const labels = {Structural:'Structural data',Hazmat:'Hazardous materials',Isolation:'Isolation & containment','As-builts':'As-built drawings','P&IDs':'P&IDs',Waste:'Waste classification','Well P&A':'Well P&A',Weight:'Weight control',Inspection:'Inspection records'};
+        const homeChart = Boolean(document.querySelector('.homepage-explorer'));
+        const name = homeChart ? labels[domain.key] : domain.title;
+        const bar = homeChart ? `<span class="domain-chart-track" aria-hidden="true"><span style="width:${domain.score}%"></span></span>` : '';
+        return `<button type="button" role="tab" class="explorer-domain-btn ${active ? "active" : ""}" id="domain-tab-${index}" aria-label="${domain.title}: illustrative score ${domain.score} out of 100, ${domain.status}" aria-controls="explorerDetail" data-domain="${domain.key}" aria-selected="${active}" tabindex="${active ? "0" : "-1"}"><span class="domain-index">${String(index + 1).padStart(2, "0")}</span><span class="domain-name">${name}</span>${bar}<span class="domain-status ${quality}">${domain.status}</span><strong class="${quality}">${domain.score}</strong></button>`;
       })
       .join("");
 
@@ -155,9 +101,10 @@
     document.getElementById("explorerDomainStatus").textContent = domain.status;
     document.getElementById("explorerDomainStatus").className = `domain-state ${qualityClass(domain.score)}`;
     document.getElementById("explorerDomainMeter").style.width = `${domain.score}%`;
-    document.getElementById("explorerDomainCopy").textContent = domain.copy;
+    document.getElementById("explorerDomainCopy").textContent = domain.copy + (domain.key==="Well P&A" ? " "+evidence.assets[state.asset].domain07Note : "");
     document.getElementById("explorerDomainImpact").textContent = domain.impact;
     document.getElementById("explorerDomainAction").textContent = domain.action;
+    document.dispatchEvent(new CustomEvent("endura:evidence",{detail:{title:domain.title,impact:domain.impact,key:domain.key,asset:state.asset}}));
   }
 
   function selectDomain(key, announce) {
@@ -165,10 +112,14 @@
     if (!domain) return;
     state.selected = key;
     state.preview = null;
+    document.dispatchEvent(new CustomEvent("endura:selected", { detail:key }));
+    document.getElementById("explorerDetail").setAttribute("aria-labelledby", "domain-tab-" + domains.indexOf(domain));
     updateDetail(domain);
     renderDomainList();
     renderHotspots();
     if (window.EnduraExplorer3D) window.EnduraExplorer3D.highlightDomain(key, Boolean(announce));
+    else if(announce) state.pendingFocus=true;
+    if(announce)window.enduraTrack?.('explorer_hotspot',{domain:key});
     if (announce && liveStatus) liveStatus.textContent = `${domain.title} selected. Illustrative score ${domain.score} out of 100.`;
   }
 
@@ -193,7 +144,37 @@
     },
   };
 
+  // Keep 44px controls apart; leader lines preserve the physical anchor.
+  let leaderLayer=null;
+  function arrangeHotspots(points,width,height,top=28,bottom=28){
+    const placed=[],gap=50,clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+    if(!leaderLayer){leaderLayer=document.createElementNS('http://www.w3.org/2000/svg','svg');leaderLayer.setAttribute('class','hotspot-leaders');leaderLayer.setAttribute('aria-hidden','true');stage.append(leaderLayer);}
+    leaderLayer.setAttribute('viewBox','0 0 '+width+' '+height);const lines=[];
+    points.sort((a,b)=>Number(b.button.dataset.domain===state.selected)-Number(a.button.dataset.domain===state.selected));
+    points.forEach(point=>{
+      const ox=clamp(point.x,26,width-26),oy=clamp(point.y,top,height-bottom);let chosen=null,best=Infinity;
+      const candidates=[{x:ox,y:oy}];
+      for(let radius=gap;radius<=gap*4;radius+=gap)for(let i=0;i<12;i++){const angle=i*Math.PI/6;candidates.push({x:clamp(ox+Math.cos(angle)*radius,26,width-26),y:clamp(oy+Math.sin(angle)*radius,top,height-bottom)});}
+      for(const candidate of candidates){if(placed.some(p=>Math.hypot(p.x-candidate.x,p.y-candidate.y)<gap-1))continue;const distance=Math.hypot(candidate.x-point.x,candidate.y-point.y);if(distance<best){best=distance;chosen=candidate;}}
+      chosen=chosen||{x:ox,y:oy};placed.push(chosen);point.button.style.left=chosen.x+'px';point.button.style.top=chosen.y+'px';
+      if(Math.hypot(chosen.x-point.x,chosen.y-point.y)>5){const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const [key,value] of Object.entries({x1:point.x,y1:point.y,x2:chosen.x,y2:chosen.y}))line.setAttribute(key,value);lines.push(line);}
+    });leaderLayer.replaceChildren(...lines);
+  }
+  function arrangeFallback(){const rect=stage.getBoundingClientRect();if(rect.width<1)return;const points=[...hotspotLayer.querySelectorAll('button')].map(button=>{const p=fallbackAnchors[state.asset][button.dataset.domain];return {button,x:rect.width*p[0]/100,y:rect.height*p[1]/100};});arrangeHotspots(points,rect.width,rect.height,rect.width<500?115:70,95);}
   function renderHotspots() {
+    if (hotspotLayer.querySelector("button")) {
+      hotspotLayer.querySelectorAll("button").forEach(button => {
+        button.classList.toggle("active",button.dataset.domain === state.selected);
+        button.setAttribute("aria-pressed",String(button.dataset.domain === state.selected));
+        if (!window.EnduraExplorer3D || state.threeFailed) {
+          const point=fallbackAnchors[state.asset][button.dataset.domain];
+          button.classList.remove("occluded");button.style.left=point[0]+"%";button.style.top=point[1]+"%";button.hidden=false;
+        }
+      });
+      if (window.EnduraExplorer3D && !state.threeFailed) window.EnduraExplorer3D.registerHotspots();
+      else arrangeFallback();
+      return;
+    }
     hotspotLayer.innerHTML = domains
       .map((domain, index) => {
         const quality = qualityClass(domain.score);
@@ -209,15 +190,18 @@
       button.addEventListener("blur", clearPreview);
     });
     if (window.EnduraExplorer3D) window.EnduraExplorer3D.registerHotspots();
+    else arrangeFallback();
   }
 
+  addEventListener("resize",()=>{if(state.threeFailed||!window.EnduraExplorer3D)arrangeFallback();});
   function setFallbackAsset(asset) {
     if (!fallbackImage) return;
-    fallbackImage.src = asset === "offshore" ? "assets/img/explorer-offshore-fallback.png" : "assets/img/explorer-onshore-fallback.png";
+    fallbackImage.src = asset === "offshore" ? "assets/img/explorer-offshore-fallback.webp" : "assets/img/explorer-onshore-fallback.webp";
     fallbackImage.alt = asset === "offshore" ? "Static fallback view of the illustrative offshore platform model" : "Static fallback view of the illustrative onshore plant model";
   }
 
   function setAsset(asset, announce) {
+    if(announce)state.pendingFocus=false;
     state.asset = asset;
     document.querySelectorAll("[data-asset]").forEach((button) => {
       const active = button.dataset.asset === asset;
@@ -226,6 +210,7 @@
     });
     if (assetLabel) assetLabel.textContent = asset === "offshore" ? "Offshore platform" : "Onshore plant";
     setFallbackAsset(asset);
+    updateDetail(domainByKey(state.selected));
     renderHotspots();
     if (window.EnduraExplorer3D) window.EnduraExplorer3D.setAsset(asset);
     if (announce && liveStatus) liveStatus.textContent = `${asset === "offshore" ? "Offshore platform" : "Onshore plant"} view selected.`;
@@ -236,10 +221,28 @@
   renderDomainList();
   renderHotspots();
   updateDetail(domainByKey(state.selected));
-  setFallbackAsset(state.asset);
+  setAsset(state.asset, false);
+  document.getElementById("explorerDetail").setAttribute("aria-labelledby","domain-tab-"+domains.findIndex(d=>d.key===state.selected));
+  document.addEventListener("endura:mode", event => { state.viewMode=event.detail;window.EnduraExplorer3D?.setViewMode(state.viewMode,false); });
+  document.addEventListener("endura:domain", event => {
+    if (!event.detail || !domainByKey(event.detail.domain)) return;
+    selectDomain(event.detail.domain, true);
+    state.viewMode = event.detail.mode || "standard";
+    window.EnduraExplorer3D?.setViewMode(state.viewMode, false);
+  });
 
   function showFallback(message) {
+    renderState("Static model · evidence interactive");
     state.threeFailed = true;
+    window.EnduraExplorer3D?.dispose?.();
+    window.EnduraExplorer3D = null;
+    document.querySelectorAll('.viewer-controls button').forEach(button=>button.disabled=true);
+    document.querySelector('.viewer-controls')?.setAttribute('hidden','');
+    stage.setAttribute("aria-label","Illustrative static asset. Select evidence domains using the numbered hotspots or domain list.");
+    stage.removeAttribute("tabindex");
+    const hint = document.getElementById('viewerHint');
+    if (hint) hint.textContent = 'Static model view. Select a numbered hotspot or chart row to explore the evidence.';
+    renderHotspots();
     loading?.setAttribute("hidden", "");
     fallback?.removeAttribute("hidden");
     canvas.setAttribute("hidden", "");
@@ -263,10 +266,12 @@
       return;
     }
     loading?.removeAttribute("hidden");
+    renderState("Loading 3D model");
     if (window.THREE) {
       try {
         initialiseThree();
         state.threeReady = true;
+        renderState("Interactive 3D model");
         loading?.setAttribute("hidden", "");
         fallback?.setAttribute("hidden", "");
         canvas.removeAttribute("hidden");
@@ -278,9 +283,12 @@
       return;
     }
     const script = document.createElement("script");
-    script.src = "assets/vendor/three.min.js";
+    script.src = "assets/vendor/three.min.js?v=4.4.0";
     script.async = true;
+    const engineTimer=setTimeout(()=>showFallback("The 3D engine took too long to load. The static model and domain controls remain available."),12000);
     script.onload = () => {
+      clearTimeout(engineTimer);
+      if(state.threeFailed)return;
       if (!window.THREE) {
         showFallback("The 3D engine did not initialise. The static model and domain controls remain available.");
         return;
@@ -288,6 +296,7 @@
       try {
         initialiseThree();
         state.threeReady = true;
+        renderState("Interactive 3D model");
         loading?.setAttribute("hidden", "");
         fallback?.setAttribute("hidden", "");
         canvas.removeAttribute("hidden");
@@ -297,31 +306,28 @@
         showFallback("The interactive model could not initialise. The static model and domain controls remain available.");
       }
     };
-    script.onerror = () => showFallback("The local 3D engine could not load. The static model and domain controls remain available.");
+    script.onerror = () => {clearTimeout(engineTimer);showFallback("The local 3D engine could not load. The static model and domain controls remain available.");};
     document.head.appendChild(script);
   }
 
-  if ("IntersectionObserver" in window) {
-    const loadObserver = new IntersectionObserver((entries, observer) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        loadThreeAndStart();
-        observer.disconnect();
-      }
-    }, { rootMargin: "350px 0px" });
-    loadObserver.observe(stage);
-  } else {
-    loadThreeAndStart();
-  }
+  // Requested by the lazy bootstrap, never with the initial homepage payload.
+  loadThreeAndStart();
 
   function initialiseThree() {
+    reduceMotion = motionPreference.matches;
     const THREE = window.THREE;
+    const interactionLifetime = new AbortController();
+    function listen(target,type,handler,options={}) {
+      const flags=typeof options==='boolean'?{capture:options}:options;
+      target?.addEventListener(type,handler,{...flags,signal:interactionLifetime.signal});
+    }
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, stage.clientWidth < 600 ? 1.45 : 1.8));
     renderer.outputEncoding = THREE.sRGBEncoding;
     if (THREE.ACESFilmicToneMapping) renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = document.documentElement.dataset.theme === "dark" ? 1.02 : .94;
     renderer.setClearColor(0x000000, 0);
-    const enableShadows = stage.clientWidth >= 680 && !reduceMotion;
+    const enableShadows = stage.clientWidth >= 960 && !reduceMotion;
     renderer.shadowMap.enabled = enableShadows;
     if (enableShadows) renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -410,9 +416,15 @@
     let previewDomainKey = null;
     let assembling = false;
     let assemblyStart = 0;
-    let autoRotate = !reduceMotion;
+    let autoRotate = false;
     let stageVisible = true;
     let raf = 0;
+    let disposed = false;
+    let dirty = true;
+    function requestRender(){
+      dirty = true;
+      if (!disposed && stageVisible && !raf) raf = requestAnimationFrame(animate);
+    }
     let dragging = false;
     let moved = false;
     let pointerId = null;
@@ -1398,6 +1410,7 @@
     const processKinds = new Set(["equipment", "equipmentLight", "equipmentDark", "pipe", "pipeProcess", "pipeWarm", "safety", "rust"]);
 
     function updateTheme() {
+      requestRender();
       theme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
       const p = palette();
       materialCache.forEach((material) => {
@@ -1479,7 +1492,29 @@
       updateHotspotPositions(true);
     }
 
+    function fitFactor(){const aspect=Math.max(.3,stage.clientWidth/Math.max(1,stage.clientHeight));return Math.max(1,Math.min(1.65,.85/aspect));}
+    let previousFitFactor=fitFactor();
+    function fittedDistance(baseDistance) {
+      previousFitFactor=fitFactor();
+      return baseDistance*previousFitFactor;
+    }
+    function nearestAzimuth(angle){return renderedAzimuth+Math.atan2(Math.sin(angle-renderedAzimuth),Math.cos(angle-renderedAzimuth));}
+    function cameraSelection(name) {
+      cameraButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.cameraView===name)));
+    }
+    function setCameraView(name) {
+      if(!['overview','top','side'].includes(name))return;
+      const preset=defaults[state.asset];
+      target.copy(preset.target);
+      azimuth=nearestAzimuth(name==='top'?0:name==='side'?Math.PI/2:preset.azimuth);
+      elevation=name==='top'?1.45:name==='side' ? .08 : preset.elevation;
+      distance=fittedDistance(preset.distance);
+      azimuthVelocity=0;elevationVelocity=0;autoRotate=false;
+      cameraSelection(name);updateAutoRotateButton();requestRender();
+    }
+
     function setModel(asset) {
+      requestRender();
       const offshore = asset === "offshore";
       offshoreModel.visible = offshore;
       onshoreModel.visible = !offshore;
@@ -1487,7 +1522,8 @@
       const preset = defaults[asset];
       azimuth = preset.azimuth;
       elevation = preset.elevation;
-      distance = preset.distance;
+      distance = fittedDistance(preset.distance);
+      cameraSelection("overview");
       target.copy(preset.target);
       renderedAzimuth = azimuth;
       renderedElevation = elevation;
@@ -1495,7 +1531,7 @@
       renderedTarget.copy(target);
       azimuthVelocity = 0;
       elevationVelocity = 0;
-      autoRotate = !reduceMotion;
+      autoRotate = false;
       updateAutoRotateButton();
       startAssembly();
       applyHighlight();
@@ -1503,20 +1539,21 @@
     }
 
     function startAssembly() {
-      assembling = !reduceMotion;
+      assembling = false;
       assemblyStart = performance.now();
       let index = 0;
       activeModel.traverse((object) => {
         if (!object.isMesh || !object.userData.basePosition) return;
         object.position.copy(object.userData.basePosition);
         object.userData.assemblyDelay = (index % 17) * 8;
-        if (!reduceMotion) object.position.y -= .42 + (index % 5) * .035;
+
         index += 1;
       });
-      if (reduceMotion) applyHighlight();
+      applyHighlight();
     }
 
     function focusDomain(key) {
+      requestRender();
       const anchor = anchors[state.asset][key];
       if (!anchor) return;
       const world = new THREE.Vector3();
@@ -1524,8 +1561,10 @@
       const base = defaults[state.asset].target.clone();
       target.copy(base.lerp(world, .76));
       target.y -= state.asset === "offshore" && key === "Well P&A" ? .3 : .08;
-      distance = state.asset === "offshore" ? 27.5 : 31;
-      elevation = Math.max(.12, Math.min(.72, elevation));
+      distance = fittedDistance(state.asset === "offshore" ? 27.5 : 31);
+      azimuth = nearestAzimuth(Math.atan2(world.x-base.x,world.z-base.z));
+      elevation = domainByKey(key)?.key === "Well P&A" ? .18 : .4;
+      cameraSelection("");
       autoRotate = false;
       azimuthVelocity = 0;
       elevationVelocity = 0;
@@ -1533,6 +1572,7 @@
     }
 
     function highlightDomain(key, shouldFocus) {
+      requestRender();
       activeDomain = key;
       previewDomainKey = null;
       applyHighlight();
@@ -1540,11 +1580,13 @@
     }
 
     function previewDomain(key) {
+      requestRender();
       previewDomainKey = key;
       applyHighlight();
     }
 
     function setViewMode(mode, announce) {
+      requestRender();
       if (!["standard", "structure", "process"].includes(mode)) return;
       viewerMode = mode;
       viewModeButtons.forEach((button) => {
@@ -1557,35 +1599,43 @@
     }
 
     function updateAutoRotateButton() {
+      requestRender();
       if (!autoRotateButton) return;
+      autoRotateButton.disabled = reduceMotion;
+      if(reduceMotion) autoRotate=false;
       autoRotateButton.setAttribute("aria-pressed", String(autoRotate));
-      autoRotateButton.textContent = autoRotate ? "Pause rotation" : "Auto rotate";
+      autoRotateButton.textContent = reduceMotion ? "Reduced motion" : autoRotate ? "Pause rotation" : "Auto rotate";
     }
 
     function resetView() {
+      requestRender();
       const preset = defaults[state.asset];
-      azimuth = preset.azimuth;
+      azimuth = nearestAzimuth(preset.azimuth);
       elevation = preset.elevation;
-      distance = preset.distance;
+      distance = fittedDistance(preset.distance);
+      cameraSelection("overview");
       target.copy(preset.target);
       azimuthVelocity = 0;
       elevationVelocity = 0;
-      autoRotate = !reduceMotion;
+      autoRotate = false;
       updateAutoRotateButton();
     }
 
 
     function resize() {
+      requestRender();
       const width = Math.max(1, stage.clientWidth);
       const height = Math.max(1, stage.clientHeight);
       renderer.setSize(width, height, false);
+      const nextFitFactor=fitFactor();
+      if(Math.abs(nextFitFactor-previousFitFactor)>.001){const ratio=nextFitFactor/previousFitFactor;distance=Math.max(23,Math.min(100,distance*ratio));renderedDistance=distance;previousFitFactor=nextFitFactor;}
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       updateHotspotPositions(true);
     }
 
     function updateCamera(delta = .016) {
-      const smoothing = 1 - Math.pow(.001, Math.min(.06, delta));
+      const smoothing = reduceMotion ? 1 : 1 - Math.pow(.001, Math.min(.06, delta));
       renderedAzimuth += (azimuth - renderedAzimuth) * smoothing;
       renderedElevation += (elevation - renderedElevation) * smoothing;
       renderedDistance += (distance - renderedDistance) * smoothing;
@@ -1604,6 +1654,7 @@
       const rect = stage.getBoundingClientRect();
       hotspotFrame += 1;
       const checkOcclusion = force || hotspotFrame % 7 === 0;
+      const positionPoints=[];
       hotspotLayer.querySelectorAll("button").forEach((button) => {
         const anchor = anchors[state.asset][button.dataset.domain];
         if (!anchor) return;
@@ -1616,6 +1667,7 @@
         button.style.left = `${x}px`;
         button.style.top = `${y}px`;
         button.hidden = !visible;
+        if(visible)positionPoints.push({button,x,y});
         if (!visible || !checkOcclusion) return;
         const direction = world.clone().sub(camera.position);
         const anchorDistance = direction.length();
@@ -1627,6 +1679,7 @@
         const occluded = Boolean(first && first.object.userData.domain !== button.dataset.domain);
         button.classList.toggle("occluded", occluded);
       });
+      arrangeHotspots(positionPoints,rect.width,rect.height,35,90);
       raycaster.far = Infinity;
     }
 
@@ -1651,8 +1704,10 @@
     }
 
     function pointerDown(event) {
+      requestRender();
       if (event.target.closest("button")) return;
       dragging = true;
+      cameraSelection("");
       moved = false;
       pointerId = event.pointerId;
       lastX = event.clientX;
@@ -1666,6 +1721,7 @@
     }
 
     function pointerMove(event) {
+      requestRender();
       if (!dragging || event.pointerId !== pointerId) return;
       const dx = event.clientX - lastX;
       const dy = event.clientY - lastY;
@@ -1676,12 +1732,13 @@
       elevation += elevationDelta;
       azimuthVelocity = azimuthDelta * .58;
       elevationVelocity = elevationDelta * .5;
-      elevation = Math.max(-.01, Math.min(1.08, elevation));
+      elevation = Math.max(-.01, Math.min(1.48, elevation));
       lastX = event.clientX;
       lastY = event.clientY;
     }
 
     function pointerUp(event) {
+      requestRender();
       if (!dragging || event.pointerId !== pointerId) return;
       dragging = false;
       stage.classList.remove("dragging");
@@ -1691,11 +1748,14 @@
     }
 
     function wheel(event) {
+      requestRender();
+      // Page scrolling stays native; deliberate modified wheel zooms the model.
+      if (!event.ctrlKey && !event.metaKey) return;
       event.preventDefault();
       autoRotate = false;
       updateAutoRotateButton();
       distance += event.deltaY * .024;
-      const range = state.asset === "offshore" ? [23, 60] : [23, 58];
+      const range = [23, 100];
       distance = Math.max(range[0], Math.min(range[1], distance));
     }
 
@@ -1709,24 +1769,27 @@
       const next = Math.hypot(dx, dy);
       if (pinchDistance !== null) {
         distance += (pinchDistance - next) * .045;
-        const range = state.asset === "offshore" ? [23, 60] : [23, 58];
+        const range = [23, 100];
         distance = Math.max(range[0], Math.min(range[1], distance));
       }
       pinchDistance = next;
     }
 
     function keydown(event) {
+      requestRender();
+      if(event.target.closest("button")) return;
       let handled = true;
       if (event.key === "ArrowLeft") azimuth -= .12;
       else if (event.key === "ArrowRight") azimuth += .12;
       else if (event.key === "ArrowUp") elevation = Math.max(-.01, elevation - .08);
-      else if (event.key === "ArrowDown") elevation = Math.min(1.08, elevation + .08);
+      else if (event.key === "ArrowDown") elevation = Math.min(1.48, elevation + .08);
       else if (event.key === "+" || event.key === "=") distance = Math.max(23, distance - 2.2);
-      else if (event.key === "-") distance = Math.min(state.asset === "offshore" ? 60 : 58, distance + 2.2);
+      else if (event.key === "-") distance = Math.min(100, distance + 2.2);
       else if (event.key.toLowerCase() === "r") resetView();
       else if (event.key.toLowerCase() === "f") focusDomain(activeDomain);
       else handled = false;
       if (handled) {
+        if(event.key.startsWith("Arrow"))cameraSelection("");
         event.preventDefault();
         autoRotate = false;
         azimuthVelocity = 0;
@@ -1735,70 +1798,86 @@
       }
     }
 
-    stage.addEventListener("pointerdown", pointerDown);
-    stage.addEventListener("pointermove", pointerMove);
-    stage.addEventListener("pointerup", pointerUp);
-    stage.addEventListener("pointercancel", pointerUp);
-    stage.addEventListener("wheel", wheel, { passive: false });
-    stage.addEventListener("touchmove", touchMove, { passive: true });
-    stage.addEventListener("touchend", () => { pinchDistance = null; });
-    stage.addEventListener("keydown", keydown);
-    stage.addEventListener("dblclick", (event) => {
+    listen(stage,"pointerdown", pointerDown);
+    listen(stage,"pointermove", pointerMove);
+    listen(stage,"pointerup", pointerUp);
+    listen(stage,"pointercancel", () => {
+      dragging=false;pointerId=null;azimuthVelocity=0;elevationVelocity=0;
+      stage.classList.remove("dragging");requestRender();
+    });
+    listen(stage,"wheel", wheel, { passive: false });
+
+    listen(stage,"touchend", () => { pinchDistance = null; });
+    listen(stage,"keydown", keydown);
+    listen(stage,"dblclick", (event) => {
       if (event.target.closest("button")) return;
       focusDomain(activeDomain);
       if (liveStatus) liveStatus.textContent = `${domainByKey(activeDomain)?.title || "Selected domain"} focused in the 3D model.`;
     });
 
-    document.getElementById("zoomIn")?.addEventListener("click", () => {
+    listen(document.getElementById("zoomIn"),"click", () => {
       distance = Math.max(23, distance - 2.2);
       autoRotate = false;
       updateAutoRotateButton();
     });
-    document.getElementById("zoomOut")?.addEventListener("click", () => {
-      distance = Math.min(state.asset === "offshore" ? 60 : 58, distance + 2.2);
+    listen(document.getElementById("zoomOut"),"click", () => {
+      distance = Math.min(100, distance + 2.2);
       autoRotate = false;
       updateAutoRotateButton();
     });
-    document.getElementById("resetView")?.addEventListener("click", resetView);
-    focusDomainButton?.addEventListener("click", () => {
+    listen(document.getElementById("resetView"),"click", resetView);
+    listen(focusDomainButton,"click", () => {
       focusDomain(activeDomain);
       if (liveStatus) liveStatus.textContent = `${domainByKey(activeDomain)?.title || "Selected domain"} focused in the 3D model.`;
     });
-    viewModeButtons.forEach((button) => button.addEventListener("click", () => setViewMode(button.dataset.viewMode, true)));
-    autoRotateButton?.addEventListener("click", () => {
+    viewModeButtons.forEach((button) => listen(button,"click", () => setViewMode(button.dataset.viewMode, true)));
+    cameraButtons.forEach(button=>listen(button,"click",()=>setCameraView(button.dataset.cameraView)));
+    listen(autoRotateButton,"click", () => {
       autoRotate = !autoRotate;
+      if(autoRotate)cameraSelection("");
       azimuthVelocity = 0;
       elevationVelocity = 0;
       updateAutoRotateButton();
     });
 
 
+    listen(motionPreference,'change',event=>{
+      reduceMotion=event.matches;
+      if(reduceMotion){
+        autoRotate=false;azimuthVelocity=0;elevationVelocity=0;
+        if(assembling){activeModel?.traverse(object=>{if(object.isMesh&&object.userData.basePosition)object.position.copy(object.userData.basePosition);});assembling=false;}
+      }
+      updateAutoRotateButton();applyHighlight();requestRender();
+    });
+    function contextLost(event){event.preventDefault();showFallback("Interactive 3D is unavailable. Continue with the static asset and evidence controls.");}
+    listen(canvas,"webglcontextlost",contextLost,false);
     const themeObserver = new MutationObserver(updateTheme);
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     const resizeObserver = "ResizeObserver" in window ? new ResizeObserver(resize) : null;
     resizeObserver?.observe(stage);
-    if (!resizeObserver) window.addEventListener("resize", resize);
+    if (!resizeObserver) listen(window,"resize", resize);
 
     const visibilityObserver = new IntersectionObserver((entries) => {
       stageVisible = entries.some((entry) => entry.isIntersecting) && !document.hidden;
       if (stageVisible && !raf) raf = requestAnimationFrame(animate);
     }, { threshold: 0.02 });
     visibilityObserver.observe(stage);
-    document.addEventListener("visibilitychange", () => {
+    listen(document,"visibilitychange", () => {
       stageVisible = !document.hidden && stage.getBoundingClientRect().bottom > 0 && stage.getBoundingClientRect().top < window.innerHeight;
       if (stageVisible && !raf) raf = requestAnimationFrame(animate);
     });
 
     function animate(now) {
       raf = 0;
-      if (!stageVisible) return;
+      if (!stageVisible || disposed) return;
+      dirty = false;
       const delta = Math.min(clock.getDelta(), .035);
       if (autoRotate && !dragging && !reduceMotion) {
         azimuth += delta * .11;
       } else if (!dragging && !reduceMotion) {
         azimuth += azimuthVelocity;
         elevation += elevationVelocity;
-        elevation = Math.max(-.01, Math.min(1.08, elevation));
+        elevation = Math.max(-.01, Math.min(1.48, elevation));
         const damping = Math.pow(.84, delta * 60);
         azimuthVelocity *= damping;
         elevationVelocity *= damping;
@@ -1821,7 +1900,7 @@
           applyHighlight();
         }
       }
-      if (seaSurface && seaSurface.visible && !reduceMotion) {
+      if (seaSurface && state.asset === "offshore" && seaSurface.visible && autoRotate && !reduceMotion) {
         const positions = seaSurface.geometry.attributes.position;
         const base = seaSurface.userData.waveBase;
         const time = now * .00038;
@@ -1837,7 +1916,7 @@
         positions.needsUpdate = true;
         if (now % 12 < 1) seaSurface.geometry.computeVertexNormals();
       }
-      if (!reduceMotion) {
+      if (!reduceMotion && autoRotate) {
         const selectedKey = previewDomainKey || activeDomain;
         const pulse = .27 + Math.sin(now * .004) * .055;
         materialCache.forEach((material) => {
@@ -1845,12 +1924,27 @@
         });
       }
       updateCamera(delta);
-      renderer.render(scene, camera);
+      try { renderer.render(scene, camera); } catch (error) { showFallback("The interactive view stopped. Evidence domains remain available below."); return; }
       updateHotspotPositions(false);
-      raf = requestAnimationFrame(animate);
+      const unsettled = Math.abs(renderedAzimuth-azimuth) + Math.abs(renderedElevation-elevation) + Math.abs(renderedDistance-distance) + renderedTarget.distanceTo(target) > .002;
+      if (autoRotate || dragging || assembling || unsettled || dirty || Math.abs(azimuthVelocity)+Math.abs(elevationVelocity)>.00002) requestRender();
     }
 
+    function dispose(){
+      if(disposed)return;
+      disposed=true;cancelAnimationFrame(raf);raf=0;
+      interactionLifetime.abort();
+      if(pointerId!==null&&stage.hasPointerCapture?.(pointerId))stage.releasePointerCapture(pointerId);
+      dragging=false;pointerId=null;stage.classList.remove("dragging");
+      themeObserver.disconnect();resizeObserver?.disconnect();visibilityObserver.disconnect();
+      const geometries=new Set(), materials=new Set(), textures=new Set();
+      scene.traverse(object=>{if(object.geometry)geometries.add(object.geometry);if(object.material)(Array.isArray(object.material)?object.material:[object.material]).forEach(material=>{materials.add(material);for(const value of Object.values(material)){if(value?.isTexture)textures.add(value);}});});
+      geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());
+      renderer.dispose();
+    }
+    listen(window,"pagehide", event=>{if(!event.persisted)dispose();});
     window.EnduraExplorer3D = {
+      dispose,
       setAsset: setModel,
       highlightDomain,
       previewDomain,
@@ -1858,8 +1952,10 @@
       resetView,
       focusDomain,
       setViewMode,
+      setCameraView,
       getDiagnostics: () => ({
         asset: state.asset,
+        camera: {azimuth,elevation,distance},
         viewMode: viewerMode,
         renderCalls: renderer.info.render.calls,
         triangles: renderer.info.render.triangles,
@@ -1872,11 +1968,12 @@
 
     updateTheme();
     resize();
-    setViewMode("standard", false);
+    setViewMode(state.viewMode, false);
     setModel(state.asset);
-    highlightDomain(state.selected, false);
+    highlightDomain(state.selected, state.pendingFocus);
+    state.pendingFocus=false;
     updateAutoRotateButton();
-    raf = requestAnimationFrame(animate);
+    requestRender();
 
   }
 })();

@@ -1,0 +1,66 @@
+{
+  "evidence": [
+    [
+      "Weight and contents",
+      "Weight report and modification record do not reconcile",
+      "Removal unit size and lifting basis",
+      "Reconcile equipment, retained contents and changes"
+    ],
+    [
+      "Structural condition",
+      "Available information does not establish all temporary states",
+      "Support and restraint during separation",
+      "Define the states and information needed for engineering review"
+    ],
+    [
+      "Isolation boundary",
+      "Retained-system interfaces require confirmation",
+      "Preparation and separation scope",
+      "Reconcile process records with the asset owner’s boundary"
+    ],
+    [
+      "Receiving route",
+      "Acceptance requirements have not been established",
+      "Cleaning, packaging, transport and handover",
+      "Obtain the intended receiving facility’s information requirements"
+    ]
+  ],
+  "options": [
+    [
+      "Removal as one unit",
+      "Reconciled weight basis, load path and lifting, transport and landing constraints",
+      "Feasibility not established in this example"
+    ],
+    [
+      "Removal in engineered sections",
+      "Section boundaries, temporary states, access, handling and repeated transfers",
+      "Feasibility not established in this example"
+    ]
+  ],
+  "actions": [
+    [
+      "01",
+      "Reconcile weight and configuration",
+      "Asset owner with engineering reviewer",
+      "Before the options review"
+    ],
+    [
+      "02",
+      "Define temporary states and study inputs",
+      "Appointed engineering team",
+      "Before a removal recommendation"
+    ],
+    [
+      "03",
+      "Confirm isolation and preparation boundaries",
+      "Asset owner and operating representatives",
+      "Before preparation scope is finalised"
+    ],
+    [
+      "04",
+      "Establish material acceptance information",
+      "Project team and intended receiving facility",
+      "Before the material pathway is committed"
+    ]
+  ]
+}

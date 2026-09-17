@@ -1,0 +1,25 @@
+{
+  "release": "endura-3.1",
+  "provider": "disabled",
+  "networkCollection": false,
+  "ownerDecision": "Jed to select and provision analytics before activation",
+  "events": [
+    "contact_submit",
+    "briefing_request",
+    "checklist_print",
+    "diagnostic_complete",
+    "capability_download",
+    "explorer_hotspot",
+    "atlas_filter",
+    "field_note_pdf",
+    "reading_pack_print"
+  ],
+  "excluded": [
+    "form fields",
+    "self-check answers",
+    "scores",
+    "email addresses",
+    "query strings",
+    "client records"
+  ]
+}

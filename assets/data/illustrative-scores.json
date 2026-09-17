@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "release": "endura-4.0",
+  "caseId": "synthetic-evidence-example-01",
+  "label": "Illustrative evidence example",
+  "scale": {
+    "minimum": 0,
+    "maximum": 100,
+    "integerOnly": true
+  },
+  "notice": "The scores are a synthetic demonstration, not measurements of an actual asset, a validated integrity assessment or an asset retirement obligation accounting number. Both asset views use the same example evidence set.",
+  "bands": [
+    {
+      "key": "critical",
+      "minimum": 0,
+      "maximum": 49,
+      "label": "Critical gap"
+    },
+    {
+      "key": "moderate",
+      "minimum": 50,
+      "maximum": 69,
+      "label": "Moderate"
+    },
+    {
+      "key": "good",
+      "minimum": 70,
+      "maximum": 100,
+      "label": "Good coverage"
+    }
+  ],
+  "domains": [
+    {
+      "key": "Structural",
+      "title": "Structural Data",
+      "score": 38,
+      "copy": "Checks current condition, degradation, modification history and the temporary-state basis behind removal and support decisions.",
+      "impact": "Removal method, access, lifting, temporary support and sequence.",
+      "action": "Reconcile structural drawings, inspection evidence and modification records.",
+      "ordinal": 1
+    },
+    {
+      "key": "Hazmat",
+      "title": "Hazardous Materials",
+      "score": 41,
+      "copy": "Tests whether hazardous-material and naturally occurring radioactive material (NORM) registers, surveys and sampling history support packaging and disposal planning.",
+      "impact": "PPE, decontamination, waste routing, programme and cost.",
+      "action": "Validate the register against current areas, quantities and classifications.",
+      "ordinal": 2
+    },
+    {
+      "key": "Isolation",
+      "title": "Isolation and Containment",
+      "score": 44,
+      "copy": "Reviews retained inventories, line status, isolation records and boundary conditions affecting safe preparation.",
+      "impact": "Make-safe scope, worksite exposure and execution interfaces.",
+      "action": "Reconcile the isolation philosophy to current P&IDs and field status.",
+      "ordinal": 3
+    },
+    {
+      "key": "As-builts",
+      "title": "As-Built Drawings",
+      "score": 55,
+      "copy": "Locates modification drift, missing packages and configuration changes that affect the scope basis.",
+      "impact": "Quantities, access, interfaces and method definition.",
+      "action": "Prioritise drawings connected to high-consequence scope decisions.",
+      "ordinal": 4
+    },
+    {
+      "key": "P&IDs",
+      "title": "Piping and instrumentation diagrams (P&IDs)",
+      "score": 62,
+      "copy": "Checks revision alignment, tie-ins, process boundaries and whether the process basis reflects the current asset.",
+      "impact": "Isolation, residual inventory, cleaning and scope limits.",
+      "action": "Resolve revision conflicts and field-verify critical boundaries.",
+      "ordinal": 5
+    },
+    {
+      "key": "Waste",
+      "title": "Waste Classification",
+      "score": 64,
+      "copy": "Reviews expected waste streams, classifications, routing assumptions and current disposal capacity.",
+      "impact": "Disposal route, logistics, permits, programme and recovery value.",
+      "action": "Connect material quantities to confirmed classifications and facilities.",
+      "ordinal": 6
+    },
+    {
+      "key": "Well P&A",
+      "title": "Well plugging and abandonment (P&A)",
+      "score": 71,
+      "copy": "Separates well-scope confidence from facility scope and exposes unresolved suspended-well information.",
+      "impact": "Battery limits, schedule, regulatory pathway and liability allocation.",
+      "action": "Confirm well status, ownership, records and scope demarcation.",
+      "ordinal": 7
+    },
+    {
+      "key": "Weight",
+      "title": "Weight Control",
+      "score": 79,
+      "copy": "Reconciles weight reports, modifications and allowances before lift or transport strategies harden.",
+      "impact": "Lift studies, transport, support design and contingency.",
+      "action": "Close the delta between weight reports, drawings and change records.",
+      "ordinal": 8
+    },
+    {
+      "key": "Inspection",
+      "title": "Inspection Records",
+      "score": 84,
+      "copy": "Connects current condition evidence to access, dismantling and temporary-state assumptions.",
+      "impact": "Personnel access, plant selection, sequence and risk controls.",
+      "action": "Confirm the inspection basis remains current for the intended method.",
+      "ordinal": 9
+    }
+  ],
+  "assets": {
+    "offshore": {
+      "label": "Offshore platform",
+      "caseId": "synthetic-evidence-example-01",
+      "domain07Note": "Well plugging and abandonment (P&A) is a separate scope. Its applicability depends on the defined asset boundary and current well status."
+    },
+    "onshore": {
+      "label": "Onshore plant",
+      "caseId": "synthetic-evidence-example-01",
+      "domain07Note": "Domain 07 retains the well plugging and abandonment (P&A) category. A well scope applies only where wells form part of the defined asset boundary. This generic plant illustration does not establish that wells are present."
+    }
+  },
+  "sourceBasis": {
+    "scoreSource": "Existing Endura 3.0 explorer.js synthetic example",
+    "bandSource": "Existing explorer.js qualityClass function",
+    "methodologyAlignment": "The current EAI-METH-001 text was not supplied. Domain 07 canonical renaming or remapping requires confirmation against it."
+  }
+}
