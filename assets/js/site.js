@@ -85,7 +85,7 @@ addEventListener('pagehide',()=>closeNavigation(false));
 function syncBrandLockups(){
   const dark=e.dataset.theme==='dark';
   document.querySelectorAll('img.brand-lockup').forEach(image=>{
-    const candidates=dark?image.dataset.darkSrcset:image.dataset.lightSrcset;
+    const candidates=(dark||image.dataset.brandSurface==='dark')?image.dataset.darkSrcset:image.dataset.lightSrcset;
     if(!candidates)return;
     if(image.getAttribute('srcset')!==candidates)image.setAttribute('srcset',candidates);
     const source=candidates.split(',')[0].trim().split(/\s+/)[0];
@@ -134,4 +134,21 @@ function o(t,n){e.dataset.theme=t,a();try{localStorage.setItem(`endura-theme`,t)
   const syncDensity = () => document.documentElement.style.setProperty('--image-density', String(Math.max(1, window.devicePixelRatio || 1)));
   syncDensity();
   window.addEventListener('resize', syncDensity, {passive:true});
+})();
+// Compact section strips retain full labels and expose their scrollable extent.
+(() => {
+  document.querySelectorAll('.scroll-strip').forEach(strip=>{
+    const content=strip.querySelector('.strip-content');
+    const buttons=[...strip.querySelectorAll('[data-strip-scroll]')];
+    if(!content||!buttons.length)return;
+    const update=()=>buttons.forEach(button=>{
+      button.disabled=Number(button.dataset.stripScroll)<0?content.scrollLeft<=1:content.scrollLeft+content.clientWidth>=content.scrollWidth-1;
+    });
+    buttons.forEach(button=>button.addEventListener('click',()=>{
+      content.scrollBy({left:Number(button.dataset.stripScroll)*Math.max(160,content.clientWidth*.8),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+    }));
+    content.addEventListener('scroll',update,{passive:true});
+    if('ResizeObserver' in window)new ResizeObserver(update).observe(content);
+    document.fonts?.ready.then(update);update();
+  });
 })();
