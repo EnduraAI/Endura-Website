@@ -6,7 +6,7 @@ let e=document.documentElement,t=document.body;
 const header=document.querySelector('.site-nav');
 const menuButton=document.querySelector('.menu-btn');
 const navigation=document.querySelector('.nav-links');
-const mobileViewport=matchMedia('(max-width:860px)');
+const mobileViewport=matchMedia('(max-width:1080px)');
 let menuSession=null;
 const lockProperties=['position','top','left','right','width','overflow'];
 const saveProperty=(element,name)=>[element.style.getPropertyValue(name),element.style.getPropertyPriority(name)];
