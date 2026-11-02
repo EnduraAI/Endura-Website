@@ -996,3 +996,17 @@ main #noteSearch{min-height:52px;padding:0 16px 0 46px!important;border-right:0!
 .lib-empty-clear{display:inline;padding:0;border:0;background:none;color:var(--ink);font:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;cursor:pointer}
 .lib-empty-clear:hover{color:var(--orange-ink)}
 @media (max-width:640px){main #noteSearch{padding-left:42px!important}.lib-search-field svg{left:14px}.lib-search-clear{padding:0 14px}}
+
+/* ---------- 7.1.3: audit fixes ---------- */
+/* hero pillars: titles line up whatever the length of each summary */
+.hx7-pillars a{align-content:start}
+/* focus ring: deep orange on light surfaces (7.4:1 on paper), brand orange on dark bands */
+html:not([data-theme=dark]) :focus-visible{outline-color:var(--orange-ink)!important}
+html:not([data-theme=dark]) .on-night :focus-visible{outline-color:var(--brand-orange)!important}
+/* About: each heading sits level with the start of its own text */
+.about-story-grid{align-items:start!important}
+/* decomm.ai page: the two calls to action sit in one wrapping row */
+.dai-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:28px}
+.dai-cta-row>a{margin:0!important}
+/* without JavaScript, controls that need it are not shown */
+html.no-js .library-filters,html.no-js .theme-btn{display:none!important}

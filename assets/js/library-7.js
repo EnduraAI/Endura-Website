@@ -35,7 +35,11 @@
       c.hidden = !hit;
       if (hit) shown++;
     });
-    if (empty) empty.hidden = shown > 0;
+    if (empty) {
+      empty.hidden = shown > 0;
+      var why = document.getElementById("noteSearchEmptyText");
+      if (why) why.textContent = selected !== "all" && ws.length ? "No technical notes in this topic match this search." : "No technical notes match this search.";
+    }
     var msg = ws.length || selected !== "all" ? shown + " of " + cards.length + " technical notes" : cards.length + " technical notes";
     clearTimeout(say);                                  // while typing, announce the count once the typing pauses
     if (now) count.textContent = msg;

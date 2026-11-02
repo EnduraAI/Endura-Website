@@ -40,3 +40,11 @@
     addEventListener("beforeprint", function () { items.forEach(function (el) { el.classList.add("is-in"); }); });
   }
 })();
+/* 7.1.3: the scope finder moves focus to its result, so keyboard and screen reader users land on it */
+(function () {
+  var form = document.getElementById("scopeFinderForm"), title = document.getElementById("scopeResultTitle"), box = document.getElementById("scopeFinderResult");
+  if (!form || !title || !box) return;
+  title.setAttribute("tabindex", "-1");
+  form.addEventListener("submit", function () { setTimeout(function () { if (!box.hidden) title.focus(); }, 0); });
+})();
+
