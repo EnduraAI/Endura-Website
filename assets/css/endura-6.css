@@ -897,9 +897,9 @@ html.ring-intro .hx7-pillars{animation-delay:.34s}
 .hx-exec-lead figcaption,.hx-model figcaption{color:var(--ink-3)!important;border-top:1px solid var(--rule-2);padding-top:10px}
 .hx-photos figcaption{border-top-color:var(--rule-2)!important}
 .hx-photos figcaption span:last-child{color:var(--ink-3)!important}
-/* 7.1: photographs and the model render keep their real colour for every visitor (the 6.x grade above applies);
-   the dusk platform photograph is lifted a little so it sits on paper */
-.hx-exec-lead img{filter:saturate(.9) contrast(1.02) brightness(1.14)}
+/* 7.1: photographs and the model render keep their real colour for every visitor (the 6.x grade above applies).
+   7.3: licensed photographs replace the supplied ones; the lead is no longer lifted */
+.hx-exec-lead img{filter:saturate(.94) contrast(1.02)}
 .hx-model-visual{background:var(--band)}
 .hx-exec-lead picture,.hx-photos picture{background:var(--band)}
 .hx-exec .hx-note,.hx-exec .hx-photos-note{color:var(--ink-3)!important}
