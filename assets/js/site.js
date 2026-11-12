@@ -3,9 +3,9 @@
 let e=document.documentElement,t=document.body;
 
 // One controller owns every mobile-navigation open and close path.
-const header=document.querySelector('.site-nav');
-const menuButton=document.querySelector('.menu-btn');
-const navigation=document.querySelector('.nav-links');
+const header=document.querySelector('.hd');
+const menuButton=document.querySelector('.hd-menu');
+const navigation=document.querySelector('.hd-nav');
 const mobileViewport=matchMedia('(max-width:1080px)');
 let menuSession=null;
 const lockProperties=['position','top','left','right','width','overflow'];
@@ -93,7 +93,7 @@ function syncBrandLockups(){
   });
 }
 function a(){
-  const color=getComputedStyle(e).getPropertyValue('--bg').trim();
+  const color=getComputedStyle(e).getPropertyValue('--deep').trim();
   if(color)document.querySelectorAll('meta[name="theme-color"]').forEach(meta=>{meta.content=color;});
   syncBrandLockups();
 }
@@ -128,7 +128,7 @@ if(chapterStrips.length){
   document.fonts?.ready.then(queueChapters);
   queueChapters();
 }
-function o(t,n){e.dataset.theme=t,a();try{localStorage.setItem(`endura-theme`,t)}catch{}document.querySelectorAll(`.theme-btn`).forEach(e=>{e.setAttribute(`aria-pressed`,String(t===`dark`)),e.setAttribute(`aria-label`,t===`dark`?`Switch to light theme`:`Switch to dark theme`),e.title=t===`dark`?`Switch to light theme`:`Switch to dark theme`})}let s=e.dataset.theme===`dark`?`dark`:`light`;document.querySelectorAll(`.theme-btn`).forEach(t=>{t.setAttribute(`aria-pressed`,String(e.dataset.theme===`dark`)),t.setAttribute(`aria-label`,e.dataset.theme===`dark`?`Switch to light theme`:`Switch to dark theme`),t.addEventListener(`click`,()=>{s=s===`dark`?`light`:`dark`,o(s,t)})}),a();let c=document.getElementById(`contactForm`);if(c){let e=c.querySelector(`.form-status`),t=c.querySelector(`[type="submit"]`),n=!1,r=null,i=0;addEventListener(`pagehide`,()=>{i++,r?.abort(),r=null}),addEventListener(`pageshow`,a=>{a.persisted&&(i++,r?.abort(),r=null,n=!1,c.removeAttribute(`aria-busy`),t&&(t.disabled=!1),e&&(e.textContent=``))}),c.addEventListener(`submit`,async a=>{if(n){a.preventDefault();return}let o=[...c.elements].find(e=>e.willValidate&&!e.checkValidity());if(o){a.preventDefault(),o.focus(),e&&(e.textContent=`Please complete the highlighted required fields.`);return}if(n=!0,c.setAttribute(`aria-busy`,`true`),!window.fetch){e&&(e.textContent=`Submitting securely…`),t&&(t.disabled=!0);return}a.preventDefault(),e&&(e.textContent=`Submitting securely…`),t&&(t.disabled=!0);let s=!1,l=++i,u=new AbortController;r=u;let d=setTimeout(()=>u.abort(),2e4);try{let e=await fetch(c.action,{signal:u.signal,method:`POST`,body:new FormData(c),headers:{Accept:`application/json`}});if(l!==i)return;if(!e.ok){let t=`The form could not be submitted. Please email jed@enduradecom.com.`;try{let n=await e.json();n?.errors?.length&&(t=n.errors.map(e=>e.message).join(` `))}catch{}throw Error(t)}let t=c.dataset.successUrl||c.querySelector(`[name="_next"]`)?.value||`thanks.html`;window.enduraTrack?.(`contact_submit`),s=!0,window.location.assign(t)}catch(n){if(l!==i)return;s=!1,e&&(e.textContent=(n?.name===`AbortError`?`The request timed out. Your message is still here. Try again or email jed@enduradecom.com.`:n?.message)||`The form could not be submitted. Please email jed@enduradecom.com.`),t&&(t.disabled=!1)}finally{clearTimeout(d),l===i&&(r=null),!s&&l===i&&(n=!1,c.removeAttribute(`aria-busy`),t&&(t.disabled=!1))}})}})();
+function o(t,n){e.dataset.theme=t,a();try{localStorage.setItem(`endura-theme`,t)}catch{}document.querySelectorAll(`.hd-theme`).forEach(e=>{e.setAttribute(`aria-pressed`,String(t===`dark`)),e.setAttribute(`aria-label`,t===`dark`?`Switch to light theme`:`Switch to dark theme`),e.title=t===`dark`?`Switch to light theme`:`Switch to dark theme`})}let s=e.dataset.theme===`dark`?`dark`:`light`;document.querySelectorAll(`.hd-theme`).forEach(t=>{t.setAttribute(`aria-pressed`,String(e.dataset.theme===`dark`)),t.setAttribute(`aria-label`,e.dataset.theme===`dark`?`Switch to light theme`:`Switch to dark theme`),t.addEventListener(`click`,()=>{s=s===`dark`?`light`:`dark`,o(s,t)})}),a();let c=document.getElementById(`contactForm`);if(c){let e=c.querySelector(`.form-status`),t=c.querySelector(`[type="submit"]`),n=!1,r=null,i=0;addEventListener(`pagehide`,()=>{i++,r?.abort(),r=null}),addEventListener(`pageshow`,a=>{a.persisted&&(i++,r?.abort(),r=null,n=!1,c.removeAttribute(`aria-busy`),t&&(t.disabled=!1),e&&(e.textContent=``))}),c.addEventListener(`submit`,async a=>{if(n){a.preventDefault();return}let o=[...c.elements].find(e=>e.willValidate&&!e.checkValidity());if(o){a.preventDefault(),o.focus(),e&&(e.textContent=`Please complete the highlighted required fields.`);return}if(n=!0,c.setAttribute(`aria-busy`,`true`),!window.fetch){e&&(e.textContent=`Submitting securely…`),t&&(t.disabled=!0);return}a.preventDefault(),e&&(e.textContent=`Submitting securely…`),t&&(t.disabled=!0);let s=!1,l=++i,u=new AbortController;r=u;let d=setTimeout(()=>u.abort(),2e4);try{let e=await fetch(c.action,{signal:u.signal,method:`POST`,body:new FormData(c),headers:{Accept:`application/json`}});if(l!==i)return;if(!e.ok){let t=`The form could not be submitted. Please email jed@enduradecom.com.`;try{let n=await e.json();n?.errors?.length&&(t=n.errors.map(e=>e.message).join(` `))}catch{}throw Error(t)}let t=c.dataset.successUrl||c.querySelector(`[name="_next"]`)?.value||`thanks.html`;window.enduraTrack?.(`contact_submit`),s=!0,window.location.assign(t)}catch(n){if(l!==i)return;s=!1,e&&(e.textContent=(n?.name===`AbortError`?`The request timed out. Your message is still here. Try again or email jed@enduradecom.com.`:n?.message)||`The form could not be submitted. Please email jed@enduradecom.com.`),t&&(t.disabled=!1)}finally{clearTimeout(d),l===i&&(r=null),!s&&l===i&&(n=!1,c.removeAttribute(`aria-busy`),t&&(t.disabled=!1))}})}})();
 // Cap photography at the supplied resolution on high-density displays as well.
 (() => {
   const syncDensity = () => document.documentElement.style.setProperty('--image-density', String(Math.max(1, window.devicePixelRatio || 1)));
