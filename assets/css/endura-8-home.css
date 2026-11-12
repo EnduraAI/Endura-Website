@@ -439,6 +439,9 @@ html[data-theme=dark] .logo,.on-deep .logo{filter:brightness(0) invert(1);opacit
 .h8-practice-copy{grid-column:5 / -1}
 .h8-practice-copy h2{margin:0 0 clamp(18px,2vw,26px);max-width:17em}
 .h8-practice-copy .h8-stand{margin:0 0 20px;max-width:30em}
+/* 8.3: Jed's own first sentence in the place of the standfirst; the opening quotation mark hangs so the words line up with the heading */
+.h8-quote{margin:0 0 22px;max-width:30em;font-family:var(--read);font-size:var(--t-stand);line-height:1.42;font-weight:400;color:var(--ink);letter-spacing:-.003em}
+.h8-practice-copy .h8-quote p{margin:0;max-width:none;text-indent:-.42em}
 .h8-practice-copy p{max-width:40em;margin:0 0 14px}
 /* career summary: one row per role, with one fact from the published record */
 .h8-career{margin-top:clamp(48px,5.4vw,84px)}

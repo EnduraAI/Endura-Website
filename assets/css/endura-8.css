@@ -638,6 +638,40 @@ html:not([data-theme=dark]) .walk-scope img.t-dark,html[data-theme=dark] .walk-s
 /* Explorer: the next-step links read as the site's other text links (they were orange) */
 .domain-next-step a{color:var(--ink)!important;font-weight:560;text-decoration-thickness:1.5px;text-underline-offset:.34em!important;text-decoration-color:color-mix(in srgb,currentColor 34%,transparent)}
 .domain-next-step a:hover{text-decoration-color:var(--brand-orange)}
+
+/* 8.3: Jed's note on the About page. His own words are set in the reading face, the one voice on the site that is a person's */
+.leadership-grid .founder-note h2{margin:0 0 clamp(20px,2.2vw,30px)!important}
+.leadership-grid .founder-note p:not(.founder-sign){font-family:var(--read)!important;font-size:var(--t-lead)!important;line-height:1.62!important;color:var(--ink)!important;max-width:33em!important;margin:0 0 1em!important;letter-spacing:-.003em}
+.leadership-grid .founder-note .founder-sign{display:flex!important;flex-direction:column;gap:2px;margin:clamp(24px,2.6vw,34px) 0 22px!important;padding-top:18px;border-top:1px solid var(--rule-2);max-width:33em!important;font-size:var(--t-small)!important;line-height:1.45!important;color:var(--ink-3)!important}
+.leadership-grid .founder-note .founder-sign b{font-size:var(--t-body);font-weight:600;color:var(--ink)}
+
+/* 8.3: decomm.ai, why it exists, in Jed's words beside the platform's own description */
+.platform-explanation{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,96px);align-items:start}
+.platform-explanation .ai-copy{max-width:none!important}
+.voice{margin:0;padding-top:22px;border-top:1px solid var(--ink)}
+.voice blockquote{margin:0}
+.voice blockquote p{margin:0!important;font-family:var(--read)!important;font-size:var(--t-lead)!important;line-height:1.55!important;color:var(--ink)!important;letter-spacing:-.003em;text-indent:-.42em;max-width:none!important}
+.voice figcaption{display:flex;flex-direction:column;gap:2px;margin-top:22px;font-size:var(--t-small);line-height:1.45;color:var(--ink-3)}
+.voice figcaption b{font-size:var(--t-body);font-weight:600;color:var(--ink)}
+.voice figcaption .text-link{margin-top:16px;align-self:flex-start}
+@media (max-width:960px){.platform-explanation{grid-template-columns:1fr}}
+/* the portrait starts level with the heading and, on wide screens, stays in view while the note is read */
+.leadership-grid .portrait-figure{align-self:start!important}
+@media (min-width:861px){.leadership-grid .portrait-figure{position:sticky!important;top:calc(var(--hh) + 32px);margin-top:6px!important}}
+
+/* 8.3: sample brief registers on a phone: one row after another, each value under its column name */
+@media (max-width:640px){
+  .sample-table-wrap{overflow:visible!important}
+  .sample-table{min-width:0!important;display:block}
+  .sample-table caption{display:block}
+  .sample-table thead{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .sample-table tbody,.sample-table tr,.sample-table tbody th,.sample-table td{display:block;width:auto}
+  .sample-table tr{padding:18px 0;border-bottom:1px solid var(--rule)}
+  .sample-table tbody th,.sample-table td{min-width:0!important;padding:0!important;border:0!important}
+  .sample-table tbody th{font-size:var(--t-body);line-height:1.4;color:var(--ink)}
+  .sample-table td{margin-top:12px;line-height:1.55!important}
+  .sample-table td::before{content:attr(data-label);display:block;margin-bottom:2px;font-size:var(--t-micro);font-weight:500;color:var(--ink-3)}
+}
 /* ---------- One type scale on every inner page (8.2) ----------
    Before this, headings on the inner pages came in eighteen sizes and text in seven. Now:
      title band h1 / section heading / item title / sub-item title / lead / text 17 / supporting 15 / note 13. */
