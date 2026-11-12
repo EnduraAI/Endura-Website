@@ -1,1 +1,0 @@
-(function(){try{var e=localStorage.getItem(`endura-theme`)||(matchMedia(`(prefers-color-scheme: dark)`).matches?`dark`:`light`);document.documentElement.dataset.theme=e}catch{document.documentElement.dataset.theme=matchMedia(`(prefers-color-scheme: dark)`).matches?`dark`:`light`}document.documentElement.classList.remove(`no-js`)})();

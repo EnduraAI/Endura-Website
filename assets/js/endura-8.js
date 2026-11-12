@@ -18,3 +18,15 @@
   title.setAttribute("tabindex", "-1");
   form.addEventListener("submit", function () { setTimeout(function () { if (!box.hidden) title.focus(); }, 0); });
 })();
+/* asset explorer: the still view shown before the model starts is taken in the page's theme, and follows the theme button */
+(function () {
+  var still = document.getElementById("assetFallbackImage");
+  if (!still) return;
+  var themed = function () {
+    var now = still.getAttribute("src") || "";
+    var next = now.replace(/-fallback(?:-dark)?\.webp$/, "-fallback" + (document.documentElement.dataset.theme === "dark" ? "-dark" : "") + ".webp");
+    if (next !== now) still.setAttribute("src", next);
+  };
+  themed();
+  new MutationObserver(themed).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+})();
